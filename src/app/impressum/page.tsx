@@ -1,0 +1,95 @@
+import PageHero from '@/components/layout/PageHero'
+
+export const metadata = {
+  title: 'Impressum',
+  description: 'Impressum und rechtliche Angaben zu GD Listen, betrieben von der Nesani UG aus Schwäbisch Gmünd.',
+  alternates: { canonical: '/impressum' },
+  robots: { index: true, follow: false },
+}
+
+const sections = [
+  {
+    title: 'Angaben gemäß § 5 TMG',
+    content: [
+      'Nesani UG (haftungsbeschränkt) i.G.',
+      'Basilikumweg 8',
+      '73527 Schwäbisch Gmünd',
+      'Deutschland',
+    ],
+  },
+  {
+    title: 'Vertreten durch',
+    content: ['Nedim Hasani, Geschäftsführer'],
+  },
+  {
+    title: 'Kontakt',
+    content: ['E-Mail: info@nesani.de', 'Web: https://www.nesani.de'],
+  },
+  {
+    title: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
+    content: ['Nedim Hasani', 'Basilikumweg 8', '73527 Schwäbisch Gmünd'],
+  },
+  {
+    title: 'Haftung für Inhalte',
+    content: [
+      'Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.',
+    ],
+  },
+  {
+    title: 'Haftung für Links',
+    content: [
+      'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.',
+    ],
+  },
+  {
+    title: 'Urheberrecht',
+    content: [
+      'Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.',
+    ],
+  },
+  {
+    title: 'Streitbeilegung',
+    content: [
+      'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr.',
+      'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+    ],
+  },
+]
+
+export default function ImpressumPage() {
+  return (
+    <div>
+      <PageHero badge="Rechtliches" title="Impressum" />
+
+      <div className="section-container-narrow" style={{ paddingBottom: '6rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {sections.map((section, i) => (
+            <div
+              key={section.title}
+              style={{
+                padding: '1.75rem 0',
+                borderTop: i === 0 ? '1px solid var(--border)' : 'none',
+                borderBottom: '1px solid var(--border)',
+              }}
+            >
+              <h2
+                className="section-title"
+                style={{ fontSize: '1.05rem', marginBottom: '0.875rem' }}
+              >
+                {section.title}
+              </h2>
+              {section.content.map((line, j) => (
+                <p
+                  key={j}
+                  style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.75 }}
+                >
+                  {line}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
