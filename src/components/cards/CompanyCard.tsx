@@ -1,15 +1,8 @@
 import Link from 'next/link'
 import { Company } from '@/data/companies'
+import CompanyLogo from '@/components/ui/CompanyLogo'
 
 export default function CompanyCard({ company }: { company: Company }) {
-  const initials = company.name
-    .split(' ')
-    .map((w) => w[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join('')
-    .toUpperCase()
-
   return (
     <Link href={`/unternehmen/${company.slug}`} className="card-link" style={{ display: 'block', height: '100%' }}>
       <div
@@ -22,25 +15,7 @@ export default function CompanyCard({ company }: { company: Company }) {
           height: '100%',
         }}
       >
-        <div
-          style={{
-            width: '48px',
-            height: '48px',
-            minWidth: '48px',
-            borderRadius: '8px',
-            background: 'var(--bg-elevated)',
-            border: '1px solid var(--border)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--text-muted)',
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '-0.02em',
-          }}
-        >
-          {initials}
-        </div>
+        <CompanyLogo name={company.name} website={company.website} logo={company.logo} size={48} radius={10} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <h3
             style={{

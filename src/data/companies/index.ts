@@ -8,6 +8,7 @@ export interface Company {
   address?: string
   phone?: string
   website?: string
+  logo?: string
   tags: string[]
   services?: string[]
   featured: boolean

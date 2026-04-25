@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RankingEntry } from '@/data/lists'
+import CompanyLogo from '@/components/ui/CompanyLogo'
 
 export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?: string }) {
   return (
@@ -12,10 +13,10 @@ export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?:
         className="card-base"
         style={{
           display: 'grid',
-          gridTemplateColumns: '64px 1fr auto',
+          gridTemplateColumns: '56px 44px minmax(0, 1fr) auto',
           alignItems: 'center',
-          gap: '1.25rem',
-          padding: '1.25rem 1.5rem',
+          gap: '1rem',
+          padding: '1.125rem 1.25rem',
         }}
       >
         <div
@@ -35,6 +36,15 @@ export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?:
             {entry.rank.toString().padStart(2, '0')}
           </span>
         </div>
+
+        <CompanyLogo
+          name={entry.name}
+          website={entry.website}
+          logo={entry.logo}
+          size={44}
+          radius={10}
+          fontSize="0.75rem"
+        />
 
         <div style={{ minWidth: 0 }}>
           <h3

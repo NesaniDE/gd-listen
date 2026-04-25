@@ -7,6 +7,7 @@ import { siteConfig } from '@/lib/config'
 import { breadcrumbJsonLd, companyJsonLd } from '@/lib/jsonld'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import CTASection from '@/components/sections/CTASection'
+import CompanyLogo from '@/components/ui/CompanyLogo'
 
 export async function generateStaticParams() {
   return companies.map((c) => ({ slug: c.slug }))
@@ -46,14 +47,6 @@ export default function UnternehmenPage({ params }: { params: { slug: string } }
     .filter((list) => list.entries.some((entry) => entry.slug === company.slug))
     .slice(0, 3)
 
-  const initials = company.name
-    .split(' ')
-    .map((w) => w[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join('')
-    .toUpperCase()
-
   const breadcrumbs = [
     { name: 'Start', href: '/' },
     { name: 'Unternehmen', href: '/' },
@@ -81,26 +74,15 @@ export default function UnternehmenPage({ params }: { params: { slug: string } }
           className="section-container"
           style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}
         >
-          <div
-            style={{
-              width: '88px',
-              height: '88px',
-              minWidth: '88px',
-              borderRadius: '12px',
-              background: 'var(--bg-elevated)',
-              border: '1px solid var(--border)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--text-muted)',
-              fontSize: '1.5rem',
-              fontWeight: 600,
-              letterSpacing: '-0.02em',
-            }}
-            aria-hidden="true"
-          >
-            {initials}
-          </div>
+          <CompanyLogo
+            name={company.name}
+            website={company.website}
+            logo={company.logo}
+            size={88}
+            radius={12}
+            fontSize="1.35rem"
+            priority
+          />
 
           <div style={{ flex: 1, minWidth: '240px' }}>
             <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.875rem', flexWrap: 'wrap' }}>

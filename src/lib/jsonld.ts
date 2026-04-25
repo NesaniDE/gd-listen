@@ -1,4 +1,5 @@
 import { siteConfig } from './config'
+import { getCompanyLogoUrl } from './company-brand'
 import type { Top10List } from '@/data/lists'
 import type { Company } from '@/data/companies'
 import type { BlogPost } from '@/data/blog'
@@ -55,6 +56,7 @@ export function companyJsonLd(company: Company) {
     company.subcategory === 'webagenturen' ||
     company.subcategory === 'werbeagenturen' ||
     company.subcategory === 'it-dienstleister'
+  const image = getCompanyLogoUrl(company.website, company.logo)
 
   return {
     '@context': 'https://schema.org',
@@ -62,6 +64,7 @@ export function companyJsonLd(company: Company) {
     name: company.name,
     description: company.longDescription || company.description,
     url: `${siteConfig.url}/unternehmen/${company.slug}`,
+    image: image || undefined,
     telephone: company.phone || undefined,
     sameAs: company.website ? [company.website] : undefined,
     address: company.address

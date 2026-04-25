@@ -6,6 +6,8 @@ export interface RankingEntry {
   description: string
   tags: string[]
   slug: string
+  website?: string
+  logo?: string
 }
 
 export interface Top10List {
@@ -33,6 +35,8 @@ function buildEntry(rank: number, slug: string): RankingEntry {
     description: company.description,
     tags: company.tags.slice(0, 3),
     slug: company.slug,
+    website: company.website,
+    logo: company.logo,
   }
 }
 
