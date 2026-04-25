@@ -1,13 +1,16 @@
 import { blogPosts } from '@/data/blog'
 import BlogCard from '@/components/cards/BlogCard'
 import PageHero from '@/components/layout/PageHero'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Blog & Ratgeber',
   description:
     'Tipps, Hintergründe und Empfehlungen rund um Schwäbisch Gmünd — vom passenden Café bis zur richtigen Zahnarztpraxis.',
-  alternates: { canonical: '/blog' },
-}
+  path: '/blog',
+  keywords: ['Blog', 'Ratgeber', siteConfig.city, ...siteConfig.keywords],
+})
 
 export default function BlogPage() {
   return (

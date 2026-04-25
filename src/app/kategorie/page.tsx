@@ -1,13 +1,16 @@
 import { categories } from '@/data/categories'
 import CategoryCard from '@/components/cards/CategoryCard'
 import PageHero from '@/components/layout/PageHero'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Kategorien',
   description:
     'Alle Kategorien von GD Listen — von Gastro über Freizeit, Dienstleister, Beauty, Gesundheit, Handwerk bis Shopping in Schwäbisch Gmünd.',
-  alternates: { canonical: '/kategorie' },
-}
+  path: '/kategorie',
+  keywords: ['Kategorien', siteConfig.city, ...siteConfig.keywords],
+})
 
 export default function KategoriePage() {
   return (

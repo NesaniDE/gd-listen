@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { navLinks } from '@/lib/config'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -14,6 +16,10 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [pathname])
 
   return (
     <header
@@ -60,21 +66,29 @@ export default function Header() {
 
         <nav style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} className="hidden-mobile">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="nav-link"
-              style={{
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                color: 'var(--text-muted)',
-                padding: '0.5rem 0.875rem',
-                borderRadius: '6px',
-                transition: 'color 0.15s ease, background-color 0.15s ease',
-              }}
-            >
-              {link.label}
-            </Link>
+            (() => {
+              const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`)
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="nav-link"
+                  aria-current={isActive ? 'page' : undefined}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    color: isActive ? 'var(--text)' : 'var(--text-muted)',
+                    background: isActive ? 'rgba(255,255,255,0.05)' : 'transparent',
+                    padding: '0.5rem 0.875rem',
+                    borderRadius: '6px',
+                    transition: 'color 0.15s ease, background-color 0.15s ease',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
+            })()
           ))}
         </nav>
 

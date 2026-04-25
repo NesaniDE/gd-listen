@@ -1,10 +1,28 @@
+function normalizeSiteUrl(value?: string) {
+  if (!value) return null
+  const withProtocol = value.startsWith('http://') || value.startsWith('https://') ? value : `https://${value}`
+
+  try {
+    return new URL(withProtocol).toString().replace(/\/$/, '')
+  } catch {
+    return null
+  }
+}
+
+const resolvedSiteUrl =
+  normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
+  normalizeSiteUrl(process.env.SITE_URL) ||
+  normalizeSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
+  normalizeSiteUrl(process.env.VERCEL_URL) ||
+  'https://gd-listen-two.vercel.app'
+
 export const siteConfig = {
   name: 'GD Listen',
   shortName: 'GD Listen',
   description:
     'Redaktionelle Top-10-Listen und lokale Empfehlungen für Schwäbisch Gmünd — eingeordnet für Gastro, Freizeit, Dienstleister, Beauty und Gesundheit.',
   shortDescription: 'Redaktionelle lokale Empfehlungen für Schwäbisch Gmünd.',
-  url: 'https://gd-listen-two.vercel.app',
+  url: resolvedSiteUrl,
   city: 'Schwäbisch Gmünd',
   cityShort: 'GD',
   region: 'Baden-Württemberg',

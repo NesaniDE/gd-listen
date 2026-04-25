@@ -2,13 +2,16 @@ import PageHero from '@/components/layout/PageHero'
 import TopListCard from '@/components/cards/TopListCard'
 import { categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Alle Top-10 Listen',
   description:
     'Übersicht redaktioneller Top-10-Listen für Schwäbisch Gmünd — Einordnungen zu Restaurants, Cafés, Fitnessstudios, Friseuren, Zahnärzten und mehr.',
-  alternates: { canonical: '/top10' },
-}
+  path: '/top10',
+  keywords: ['Top 10', siteConfig.city, ...siteConfig.keywords],
+})
 
 export default function Top10OverviewPage() {
   return (

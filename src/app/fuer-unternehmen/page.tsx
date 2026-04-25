@@ -1,13 +1,16 @@
 import PackageCard from '@/components/cards/PackageCard'
 import PageHero from '@/components/layout/PageHero'
 import FAQSection from '@/components/ui/FAQSection'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Für Unternehmen',
   description:
     'Werde Teil von GD Listen — lokale Sichtbarkeit in Schwäbisch Gmünd statt anonymem Massenlisting. Pakete, Ablauf und FAQ.',
-  alternates: { canonical: '/fuer-unternehmen' },
-}
+  path: '/fuer-unternehmen',
+  keywords: ['Für Unternehmen', siteConfig.city, ...siteConfig.keywords],
+})
 
 const packages = [
   {

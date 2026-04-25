@@ -8,6 +8,7 @@ import { blogPosts } from '@/data/blog'
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url
   const now = new Date()
+  const parseListDate = (value: string) => new Date(`${value}-01T00:00:00.000Z`)
 
   const staticEntries: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
@@ -40,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const listEntries: MetadataRoute.Sitemap = top10Lists.map((l) => ({
     url: `${base}/top10/${l.slug}`,
-    lastModified: now,
+    lastModified: parseListDate(l.updatedAt),
     changeFrequency: 'weekly',
     priority: 0.85,
   }))

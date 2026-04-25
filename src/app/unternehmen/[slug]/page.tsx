@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getCompanyBySlug, companies } from '@/data/companies'
 import { top10Lists } from '@/data/lists'
 import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 import { breadcrumbJsonLd, companyJsonLd } from '@/lib/jsonld'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import CTASection from '@/components/sections/CTASection'
@@ -19,24 +20,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const path = `/unternehmen/${company.slug}`
   const title = `${company.name} — ${siteConfig.city}`
   const description = (company.longDescription || company.description).slice(0, 160)
-  return {
+  return createPageMetadata({
     title,
     description,
+    path,
     keywords: [company.name, ...company.tags, siteConfig.city, 'Schwäbisch Gmünd'],
-    alternates: { canonical: path },
-    openGraph: {
-      type: 'profile',
-      url: `${siteConfig.url}${path}`,
-      title,
-      description,
-      siteName: siteConfig.name,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-  }
+    type: 'profile',
+  })
 }
 
 export default function UnternehmenPage({ params }: { params: { slug: string } }) {

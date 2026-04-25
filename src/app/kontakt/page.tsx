@@ -1,10 +1,14 @@
 import PageHero from '@/components/layout/PageHero'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Kontakt',
   description:
     'GD Listen ist eine redaktionelle Wissensbank für Schwäbisch Gmünd. Kontakt zu Korrekturen, Entfernungsanfragen, Hinweisen und Eintragsanfragen über die Nesani UG.',
-}
+  path: '/kontakt',
+  keywords: ['Kontakt', siteConfig.city, ...siteConfig.keywords],
+})
 
 const contactItems = [
   { label: 'Betreiber', value: 'Nesani UG (haftungsbeschränkt) i.G.', href: 'https://www.nesani.de' },

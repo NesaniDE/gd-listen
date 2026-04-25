@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
+
+export const metadata = createPageMetadata({
+  title: 'Seite nicht gefunden',
+  description: 'Die angeforderte Seite konnte auf GD Listen nicht gefunden werden.',
+  path: '/404',
+  robots: { index: false, follow: false },
+})
 
 export default function NotFound() {
   return (

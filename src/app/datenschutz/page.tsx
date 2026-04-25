@@ -1,11 +1,12 @@
 import PageHero from '@/components/layout/PageHero'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Datenschutzerklärung',
   description: 'Datenschutzerklärung von GD Listen — Hinweise zur Datenverarbeitung und deinen Rechten gemäß DSGVO.',
-  alternates: { canonical: '/datenschutz' },
+  path: '/datenschutz',
   robots: { index: true, follow: false },
-}
+})
 
 const sections = [
   {

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getCategoryBySlug, categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
 import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 import { breadcrumbJsonLd } from '@/lib/jsonld'
 import PageHero from '@/components/layout/PageHero'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
@@ -26,20 +27,12 @@ export async function generateMetadata({
   const path = `/kategorie/${category.slug}/${sub.slug}`
   const title = `${sub.label} in ${siteConfig.city}`
   const description = `Redaktionell eingeordnete Top-10-Liste für ${sub.label} in ${siteConfig.city} — lokale Orientierung für ${category.label}.`
-  return {
+  return createPageMetadata({
     title,
     description,
+    path,
     keywords: [sub.label, category.label, siteConfig.city, 'Top 10', ...siteConfig.keywords],
-    alternates: { canonical: path },
-    openGraph: {
-      type: 'website',
-      url: `${siteConfig.url}${path}`,
-      title,
-      description,
-      siteName: siteConfig.name,
-    },
-    twitter: { card: 'summary_large_image', title, description },
-  }
+  })
 }
 
 export default function SubcategoryPage({

@@ -288,6 +288,43 @@ button {
   }
 }
 
+.route-transition-shell {
+  position: relative;
+}
+
+.route-transition-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(22rem, 38vw);
+  height: 2px;
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(232, 185, 72, 0), rgba(232, 185, 72, 0.95), rgba(255, 255, 255, 0));
+  transform: translateX(-120%);
+  animation: routeBarSweep 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.route-transition-content {
+  position: relative;
+  isolation: isolate;
+  animation: routeContentIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.route-transition-content::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 220px;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(232, 185, 72, 0.16), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 72%);
+  opacity: 0;
+  animation: routeGlow 0.8s ease-out both;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -296,6 +333,52 @@ button {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes routeContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.995);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes routeGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.78;
+    transform: translateY(0);
+  }
+}
+
+@keyframes routeBarSweep {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0.15;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 10rem));
+    opacity: 0;
+  }
 }
 
 .stagger-children > * {
@@ -311,3 +394,25 @@ button {
 .stagger-children > *:nth-child(8) { animation-delay: 0.32s; }
 .stagger-children > *:nth-child(9) { animation-delay: 0.36s; }
 .stagger-children > *:nth-child(10) { animation-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .route-transition-bar,
+  .route-transition-content,
+  .route-transition-content::before,
+  .stagger-children > * {
+    animation: none !important;
+  }
+}

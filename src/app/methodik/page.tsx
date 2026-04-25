@@ -1,12 +1,15 @@
 import PageHero from '@/components/layout/PageHero'
 import FAQSection from '@/components/ui/FAQSection'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Methodik',
   description:
     'Wie GD Listen redaktionelle Top-10-Listen für Schwäbisch Gmünd einordnet — Bewertungskriterien, Prozess und transparente Hinweise ohne Anspruch auf objektive Vollständigkeit.',
-  alternates: { canonical: '/methodik' },
-}
+  path: '/methodik',
+  keywords: ['Methodik', siteConfig.city, ...siteConfig.keywords],
+})
 
 const criteria = [
   {

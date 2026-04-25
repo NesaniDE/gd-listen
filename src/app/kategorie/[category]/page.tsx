@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getCategoryBySlug, categories } from '@/data/categories'
 import { getListsByCategory } from '@/data/lists'
 import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 import { breadcrumbJsonLd, collectionPageJsonLd } from '@/lib/jsonld'
 import PageHero from '@/components/layout/PageHero'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
@@ -23,20 +24,12 @@ export async function generateMetadata({
   const path = `/kategorie/${category.slug}`
   const title = `${category.label} in ${siteConfig.city}`
   const description = `${category.description} Mit Top-10-Listen und Unternehmensprofilen.`
-  return {
+  return createPageMetadata({
     title,
     description,
+    path,
     keywords: [category.label, siteConfig.city, 'Top 10', ...siteConfig.keywords],
-    alternates: { canonical: path },
-    openGraph: {
-      type: 'website',
-      url: `${siteConfig.url}${path}`,
-      title,
-      description,
-      siteName: siteConfig.name,
-    },
-    twitter: { card: 'summary_large_image', title, description },
-  }
+  })
 }
 
 export default function CategoryPage({ params }: { params: { category: string } }) {

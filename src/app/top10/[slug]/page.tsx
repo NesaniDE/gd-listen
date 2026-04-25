@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getListBySlug, top10Lists } from '@/data/lists'
 import { getCategoryBySlug } from '@/data/categories'
 import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 import { breadcrumbJsonLd, top10ListJsonLd } from '@/lib/jsonld'
 import PageHero from '@/components/layout/PageHero'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
@@ -18,24 +19,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const list = getListBySlug(params.slug)
   if (!list) return {}
   const path = `/top10/${list.slug}`
-  return {
+  return createPageMetadata({
     title: list.title,
     description: list.intro.slice(0, 160),
+    path,
     keywords: [list.title, ...siteConfig.keywords],
-    alternates: { canonical: path },
-    openGraph: {
-      type: 'article',
-      url: `${siteConfig.url}${path}`,
-      title: list.title,
-      description: list.intro.slice(0, 160),
-      siteName: siteConfig.name,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: list.title,
-      description: list.intro.slice(0, 160),
-    },
-  }
+    type: 'article',
+    section: list.categorySlug,
+  })
 }
 
 export default function Top10ListPage({ params }: { params: { slug: string } }) {

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getBlogPostBySlug, blogPosts } from '@/data/blog'
 import { siteConfig } from '@/lib/config'
 import { blogPostJsonLd, breadcrumbJsonLd } from '@/lib/jsonld'
+import { createPageMetadata } from '@/lib/metadata'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import BlogCard from '@/components/cards/BlogCard'
 
@@ -14,26 +15,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = getBlogPostBySlug(params.slug)
   if (!post) return {}
   const path = `/blog/${post.slug}`
-  return {
+  return createPageMetadata({
     title: post.title,
     description: post.excerpt,
+    path,
     keywords: [post.category, post.title, siteConfig.city, ...siteConfig.keywords],
-    alternates: { canonical: path },
-    openGraph: {
-      type: 'article',
-      url: `${siteConfig.url}${path}`,
-      title: post.title,
-      description: post.excerpt,
-      siteName: siteConfig.name,
-      publishedTime: post.publishedAt,
-      section: post.category,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-    },
-  }
+    type: 'article',
+    publishedTime: post.publishedAt,
+    section: post.category,
+  })
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {

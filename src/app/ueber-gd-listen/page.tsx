@@ -4,13 +4,16 @@ import CTASection from '@/components/sections/CTASection'
 import { categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
 import { companies } from '@/data/companies'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: 'Über GD Listen',
   description:
     'GD Listen ist eine redaktionelle lokale Listen-Plattform nur für Schwäbisch Gmünd, betrieben von der Nesani UG.',
-  alternates: { canonical: '/ueber-gd-listen' },
-}
+  path: '/ueber-gd-listen',
+  keywords: ['Über GD Listen', siteConfig.city, ...siteConfig.keywords],
+})
 
 export default function UeberGdListenPage() {
   const stats = [
