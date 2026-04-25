@@ -59,7 +59,6 @@ export const categories: Category[] = [
       { slug: 'barbiere', label: 'Barbiere', listSlug: 'top-10-barbiere-in-schwaebisch-gmuend' },
       { slug: 'reinigungsfirmen', label: 'Reinigungsfirmen', listSlug: 'top-10-reinigungsfirmen-in-schwaebisch-gmuend' },
       { slug: 'steuerberater', label: 'Steuerberater', listSlug: 'top-10-steuerberater-in-schwaebisch-gmuend' },
-      { slug: 'anwaltskanzleien', label: 'Anwaltskanzleien', listSlug: 'top-10-anwaltskanzleien-in-schwaebisch-gmuend' },
       { slug: 'fotografen', label: 'Fotografen', listSlug: 'top-10-fotografen-in-schwaebisch-gmuend' },
       { slug: 'webagenturen', label: 'Webagenturen', listSlug: 'top-10-webagenturen-in-schwaebisch-gmuend' },
       { slug: 'werbeagenturen', label: 'Werbeagenturen', listSlug: 'top-10-werbeagenturen-in-schwaebisch-gmuend' },
