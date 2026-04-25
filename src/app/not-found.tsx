@@ -5,7 +5,7 @@ export const metadata = createPageMetadata({
   title: 'Seite nicht gefunden',
   description: 'Die angeforderte Seite konnte auf GD Listen nicht gefunden werden.',
   path: '/404',
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 })
 
 export default function NotFound() {

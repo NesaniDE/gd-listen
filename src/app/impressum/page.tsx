@@ -5,7 +5,7 @@ export const metadata = createPageMetadata({
   title: 'Impressum',
   description: 'Impressum und rechtliche Angaben zu GD Listen, betrieben von der Nesani UG aus Schwäbisch Gmünd.',
   path: '/impressum',
-  robots: { index: true, follow: false },
+  robots: { index: true, follow: true },
 })
 
 const sections = [
