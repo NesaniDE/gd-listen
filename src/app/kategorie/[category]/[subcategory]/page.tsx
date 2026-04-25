@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!sub) return {}
   const path = `/kategorie/${category.slug}/${sub.slug}`
   const title = `${sub.label} in ${siteConfig.city}`
-  const description = `Top 10 ${sub.label} in ${siteConfig.city} — kuratierte lokale Empfehlungen für ${category.label}.`
+  const description = `Redaktionell eingeordnete Top-10-Liste für ${sub.label} in ${siteConfig.city} — lokale Orientierung für ${category.label}.`
   return {
     title,
     description,
@@ -85,7 +85,7 @@ export default function SubcategoryPage({
       <PageHero
         badge={category.label}
         title={`${sub.label} in ${siteConfig.city}`}
-        subtitle={`Die besten ${sub.label} — kuratiert und redaktionell sortiert für ${siteConfig.city}.`}
+        subtitle={`Redaktionell eingeordnete Auswahl für ${sub.label} in ${siteConfig.city}. Die spätere Listenreihenfolge spiegelt unsere Einschätzung wider.`}
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem', maxWidth: '760px' }}>

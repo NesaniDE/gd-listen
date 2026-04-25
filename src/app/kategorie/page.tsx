@@ -15,7 +15,7 @@ export default function KategoriePage() {
       <PageHero
         badge="Übersicht"
         title="Alle Kategorien"
-        subtitle="Von Gastro bis Handwerk — entdecke die besten lokalen Anbieter in Schwäbisch Gmünd, kuratiert in Top-10 Listen."
+        subtitle="Von Gastro bis Handwerk — entdecke lokale Anbieter in Schwäbisch Gmünd, redaktionell eingeordnet in thematischen Listen."
       />
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
         <div

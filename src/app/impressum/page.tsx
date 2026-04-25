@@ -30,6 +30,14 @@ const sections = [
     content: ['Nedim Hasani', 'Basilikumweg 8', '73527 Schwäbisch Gmünd'],
   },
   {
+    title: 'Redaktioneller Hinweis',
+    content: [
+      'Die auf GD Listen veröffentlichten Listen, Reihenfolgen und Unternehmensbeschreibungen stellen redaktionelle Einschätzungen dar.',
+      'Sie erheben keinen Anspruch auf Vollständigkeit, Gleichbehandlung oder auf eine objektiv richtige Rangfolge.',
+      'Korrekturen, Ergänzungen oder die Prüfung einer Entfernung können per E-Mail an info@nesani.de angefragt werden.',
+    ],
+  },
+  {
     title: 'Haftung für Inhalte',
     content: [
       'Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.',

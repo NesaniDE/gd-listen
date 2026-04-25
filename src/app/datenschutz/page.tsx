@@ -8,20 +8,45 @@ export const metadata = {
 }
 
 const sections = [
-  { title: 'Datenschutz auf einen Blick', text: 'Platzhalter — allgemeiner Datenschutztext folgt hier gemäß DSGVO.' },
   {
-    title: 'Allgemeine Hinweise und Pflichtinformationen',
-    text: 'Platzhalter — Hinweise zur Datenverarbeitung und Verantwortlichkeit.',
+    title: 'Verantwortliche Stelle',
+    text:
+      'Verantwortlich für diese Website ist die Nesani UG (haftungsbeschränkt) i.G., Basilikumweg 8, 73527 Schwäbisch Gmünd, E-Mail: info@nesani.de. Diese Hinweise bilden den aktuellen technischen Stand der Website vom 25. April 2026 ab.',
   },
   {
-    title: 'Datenerfassung auf dieser Website',
-    text: 'Platzhalter — Informationen zu Cookies, Server-Logs und Kontaktformular.',
+    title: 'Hosting und Server-Logfiles',
+    text:
+      'Beim Aufruf der Website können technisch erforderliche Verbindungsdaten verarbeitet werden, zum Beispiel IP-Adresse, Datum und Uhrzeit, angefragte URL, Referrer, Browsertyp und Betriebssystem. Diese Verarbeitung ist für einen sicheren und stabilen Betrieb der Website erforderlich.',
   },
-  { title: 'Analyse-Tools und Werbung', text: 'Platzhalter — Hinweise zu eingesetzten Analyse-Diensten.' },
-  { title: 'Plugins und Tools', text: 'Platzhalter — Informationen zu eingebundenen Drittdiensten.' },
   {
-    title: 'Ihre Rechte',
-    text: 'Platzhalter — Auskunft, Berichtigung, Löschung, Widerspruch gemäß DSGVO Art. 15–21.',
+    title: 'Redaktionelle Unternehmensprofile und Listen',
+    text:
+      'GD Listen verarbeitet Unternehmensdaten wie Name, Anschrift, Website, Telefonnummer, Kategorien, Beschreibungen und redaktionelle Einordnungen, um lokale Listen und Profilseiten bereitzustellen. Die Inhalte dienen der redaktionellen Orientierung und können auf öffentlich zugänglichen Informationen, eigenen Recherchen und Nutzerhinweisen beruhen.',
+  },
+  {
+    title: 'Kontakt per E-Mail',
+    text:
+      'Wenn du uns per E-Mail kontaktierst, verarbeiten wir deine Angaben und den Nachrichteninhalt ausschließlich zur Bearbeitung deines Anliegens. Das gilt auch für Korrektur-, Ergänzungs- oder Entfernungsanfragen zu Unternehmensprofilen und Listen.',
+  },
+  {
+    title: 'Cookies und lokale Speicherungen',
+    text:
+      'Nach heutigem Stand setzt diese Website keine optionalen Analyse- oder Marketing-Cookies ein. Verwendet werden nur technisch erforderliche Cookies sowie vergleichbare lokale Speicherungen, soweit sie für den Betrieb der Website oder für grundlegende Funktionen wie das Ausblenden des Cookie-Hinweises notwendig sind.',
+  },
+  {
+    title: 'Externe Inhalte und Verlinkungen',
+    text:
+      'Unternehmenslogos werden aktuell aus öffentlich erreichbaren Favicon-Quellen abgeleitet und über die Website ausgeliefert. Außerdem enthält GD Listen externe Links zu Websites Dritter. Beim bewussten Anklicken solcher Links gelten die Datenschutzbestimmungen der jeweiligen Anbieter.',
+  },
+  {
+    title: 'Analyse, Tracking und Werbung',
+    text:
+      'Nach dem aktuellen Stand der Website werden keine optionalen Tracking-, Analyse- oder Marketing-Dienste eingebunden. Falls sich das technisch ändert, muss diese Datenschutzerklärung vor dem Einsatz solcher Dienste entsprechend angepasst werden.',
+  },
+  {
+    title: 'Deine Rechte',
+    text:
+      'Du hast im Rahmen der gesetzlichen Vorgaben insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch. Hinweise zu redaktionellen Profilen, fehlerhaften Angaben oder der Wunsch nach Prüfung einer Entfernung können an info@nesani.de gerichtet werden.',
   },
 ]
 

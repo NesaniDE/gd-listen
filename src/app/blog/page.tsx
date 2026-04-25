@@ -15,7 +15,7 @@ export default function BlogPage() {
       <PageHero
         badge="Ratgeber"
         title="Blog & Ratgeber"
-        subtitle="Tipps, Hintergründe und Empfehlungen rund um das beste aus Schwäbisch Gmünd."
+        subtitle="Tipps, Hintergründe und redaktionelle Einordnungen zu lokalen Themen aus Schwäbisch Gmünd."
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>

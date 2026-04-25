@@ -44,7 +44,11 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '320px' }}>
-              Die besten Top-10 Listen für {siteConfig.city}. Lokal. Kuratiert. Ohne Branchenbuch-Ballast.
+              Redaktionelle Top-10-Listen für {siteConfig.city}. Lokal. Kuratiert. Ohne Branchenbuch-Ballast.
+            </p>
+            <p style={{ color: 'var(--text-subtle)', fontSize: '0.8rem', lineHeight: 1.65, maxWidth: '360px', marginTop: '0.875rem' }}>
+              Listen und Reihenfolgen spiegeln unsere redaktionelle Einschätzung wider. Korrekturen oder eine
+              Überprüfung auf Entfernung sind per E-Mail an info@nesani.de möglich.
             </p>
           </div>
 

@@ -66,7 +66,7 @@ export default async function OgImage() {
               maxWidth: 980,
             }}
           >
-            Die besten Top-10 Listen für {siteConfig.city}.
+            Redaktionelle Top-10-Listen für {siteConfig.city}.
           </div>
           <div
             style={{

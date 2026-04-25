@@ -8,7 +8,7 @@ import { companies } from '@/data/companies'
 export const metadata = {
   title: 'Über GD Listen',
   description:
-    'GD Listen ist eine kuratierte lokale Top-10-Plattform nur für Schwäbisch Gmünd, betrieben von der Nesani UG.',
+    'GD Listen ist eine redaktionelle lokale Listen-Plattform nur für Schwäbisch Gmünd, betrieben von der Nesani UG.',
   alternates: { canonical: '/ueber-gd-listen' },
 }
 
@@ -30,8 +30,12 @@ export default function UeberGdListenPage() {
       text: 'Der Startpunkt ist bewusst eng gesetzt: nur Schwäbisch Gmünd. Genau diese Konzentration macht die Plattform stark, weil Inhalte, Unternehmen und Nutzerkontext nicht verwässern.',
     },
     {
-      title: 'Die Entwicklung',
-      text: 'Die Website ist von Anfang an so aufgebaut, dass sie Schritt für Schritt wachsen kann: mehr Kategorien, mehr Listen, mehr Profile, mehr Inhalte. Der Kern bleibt aber lokal und übersichtlich.',
+      title: 'Die Einordnung',
+      text: 'GD Listen veröffentlicht redaktionelle Einschätzungen und keine objektiven Qualitätsurteile. Listen und Reihenfolgen sollen Orientierung geben, nicht eine endgültige oder vollständige Wahrheit über lokale Anbieter behaupten.',
+    },
+    {
+      title: 'Korrektur & Entfernung',
+      text: 'Unternehmen können Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Prüfung einer Entfernung jederzeit per E-Mail an info@nesani.de anstoßen. Transparenz und Aktualität sind wichtiger als starre Listenplätze.',
     },
   ]
 
@@ -40,7 +44,7 @@ export default function UeberGdListenPage() {
       <PageHero
         badge="Über uns"
         title="Was ist GD Listen?"
-        subtitle="Eine lokale Top-10-Plattform nur für Schwäbisch Gmünd — klar strukturiert, thematisch sortiert und auf echte Orientierung ausgelegt."
+        subtitle="Eine lokale redaktionelle Listen-Plattform nur für Schwäbisch Gmünd — klar strukturiert, thematisch sortiert und auf Orientierung statt Absolutheit ausgelegt."
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>

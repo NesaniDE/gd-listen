@@ -81,6 +81,34 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
       </PageHero>
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <section
+          style={{
+            marginBottom: '1.5rem',
+            padding: '1.25rem 1.375rem',
+            borderRadius: '12px',
+            border: '1px solid rgba(232, 185, 72, 0.22)',
+            background: 'rgba(232, 185, 72, 0.08)',
+          }}
+        >
+          <span className="eyebrow" style={{ color: 'var(--accent)', marginBottom: '0.75rem', display: 'inline-block' }}>
+            Redaktioneller Hinweis
+          </span>
+          <p style={{ color: 'var(--text)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>
+            Diese Liste ist eine redaktionelle Einschätzung von GD Listen. Sie ist kein objektives Qualitätsranking und
+            erhebt keinen Anspruch auf Vollständigkeit oder auf eine allgemein verbindliche Reihenfolge.
+          </p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.65 }}>
+            Unternehmen können Korrekturen, Ergänzungen oder die Prüfung einer Entfernung jederzeit per E-Mail an{' '}
+            <a
+              href={`mailto:${siteConfig.publisher.email}`}
+              style={{ color: 'var(--text)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            >
+              {siteConfig.publisher.email}
+            </a>{' '}
+            anfragen.
+          </p>
+        </section>
+
         <ol
           className="stagger-children"
           style={{
@@ -103,7 +131,7 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
         <CTASection
           badge="Für Unternehmen"
           title="Bist du auf dieser Liste?"
-          subtitle="Optimiere deinen Eintrag und präsentiere dein Unternehmen als starke lokale Anlaufstelle in Schwäbisch Gmünd."
+          subtitle="Ergänze, korrigiere oder optimiere deinen Eintrag. Auf Anfrage prüfen wir auch eine Entfernung aus der Darstellung."
           primaryLabel="Jetzt eintragen"
           primaryHref="/fuer-unternehmen"
           secondaryLabel="Methodik ansehen"

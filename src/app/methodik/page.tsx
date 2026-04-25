@@ -4,7 +4,7 @@ import FAQSection from '@/components/ui/FAQSection'
 export const metadata = {
   title: 'Methodik',
   description:
-    'Wie GD Listen die Top-10 Listen für Schwäbisch Gmünd kuratiert — Bewertungskriterien, Prozess und transparente redaktionelle Einordnung.',
+    'Wie GD Listen redaktionelle Top-10-Listen für Schwäbisch Gmünd einordnet — Bewertungskriterien, Prozess und transparente Hinweise ohne Anspruch auf objektive Vollständigkeit.',
   alternates: { canonical: '/methodik' },
 }
 
@@ -31,11 +31,16 @@ const criteria = [
   },
   {
     title: 'Redaktionelle Einordnung',
-    desc: 'Die finale Reihenfolge ist redaktionell. Sie soll Orientierung geben, ohne absoluten Anspruch zu erheben.',
+    desc: 'Die finale Reihenfolge spiegelt unsere redaktionelle Einschätzung wider. Sie soll Orientierung geben, ohne absoluten oder objektiven Anspruch zu erheben.',
   },
 ]
 
 const faqItems = [
+  {
+    question: 'Sind die Listen objektiv oder vollständig?',
+    answer:
+      'Nein. Die Listen sind redaktionelle Einschätzungen von GD Listen und kein amtliches, vollständiges oder allgemeingültiges Ranking. Sie sollen die lokale Suche vereinfachen, nicht eine endgültige Wahrheit behaupten.',
+  },
   {
     question: 'Kann ich Geld zahlen, um auf Platz 1 zu kommen?',
     answer:
@@ -47,9 +52,9 @@ const faqItems = [
       'Die erste Version ist als Startbasis gedacht. Künftig sollten Listen regelmäßig geprüft und bei Bedarf überarbeitet werden, zum Beispiel quartalsweise oder bei größeren Änderungen.',
   },
   {
-    question: 'Was tue ich, wenn mein Unternehmen falsch eingetragen ist?',
+    question: 'Was tue ich, wenn mein Unternehmen falsch eingetragen ist oder entfernt werden soll?',
     answer:
-      'Über die Kontaktseite kann eine Korrektur angefragt werden. Ziel ist eine saubere, aktuelle und faire Darstellung aller gelisteten Profile.',
+      'Über die Kontaktseite oder per E-Mail an info@nesani.de kann eine Korrektur, Ergänzung oder die Prüfung einer Entfernung angefragt werden. Ziel ist eine saubere, aktuelle und faire Darstellung aller gelisteten Profile.',
   },
   {
     question: 'Können Unternehmen zusätzliche Informationen einreichen?',
@@ -66,15 +71,16 @@ export default function MethodikPage() {
       <PageHero
         badge="Transparenz"
         title="Unsere Methodik"
-        subtitle="Wie wir die Top-10 Listen für Schwäbisch Gmünd strukturieren — transparent, lokal und redaktionell nachvollziehbar."
+        subtitle="Wie wir redaktionelle Listen für Schwäbisch Gmünd strukturieren — transparent, lokal und ohne Anspruch auf objektive Allgemeingültigkeit."
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
         <section style={{ maxWidth: '720px', marginBottom: '5rem' }}>
           <p style={{ color: 'var(--text)', lineHeight: 1.75, fontSize: '1.0625rem' }}>
-            GD Listen versteht sich nicht als absoluter Richter über lokale Qualität, sondern als strukturierte
-            Orientierung für Nutzer in Schwäbisch Gmünd. Die Listen werden redaktionell aufgebaut und verbinden
-            öffentlich sichtbare Informationen mit einer klaren Nutzerperspektive.
+            GD Listen versteht sich nicht als objektiver Richter über lokale Qualität, sondern als strukturierte
+            Orientierung aus redaktioneller Perspektive. Die Listen werden redaktionell aufgebaut, verbinden öffentlich
+            sichtbare Informationen mit einer klaren Nutzerperspektive und erheben keinen Anspruch auf Vollständigkeit
+            oder auf eine für alle verbindliche Reihenfolge.
           </p>
         </section>
 

@@ -24,7 +24,7 @@ export default function HomePage() {
     },
     {
       title: 'Kuratiert',
-      desc: 'Redaktionell sortierte Top-10. Reihenfolge erklärt, nicht gewürfelt.',
+      desc: 'Redaktionell eingeordnet statt algorithmisch gewürfelt. Die Reihenfolge ist unsere Einschätzung, nicht der einzig richtige Maßstab.',
     },
     {
       title: 'Klar',
@@ -54,10 +54,10 @@ export default function HomePage() {
                 lineHeight: 1.05,
               }}
             >
-              Die besten Adressen.
+              Lokale Empfehlungen.
               <br />
               <span className="font-serif" style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-                Lokal kuratiert.
+                Redaktionell eingeordnet.
               </span>
             </h1>
 
@@ -70,8 +70,9 @@ export default function HomePage() {
                 marginBottom: '2.5rem',
               }}
             >
-              GD Listen bündelt redaktionell kuratierte Top-10-Empfehlungen für Gastro, Freizeit, Dienstleister, Beauty
-              und Gesundheit — nur für Schwäbisch Gmünd.
+              GD Listen bündelt redaktionelle Top-10-Listen und lokale Unternehmensprofile für Gastro, Freizeit,
+              Dienstleister, Beauty und Gesundheit — nur für Schwäbisch Gmünd. Die Reihenfolgen spiegeln unsere
+              Einschätzung wider und erheben keinen Anspruch auf objektive Vollständigkeit.
             </p>
 
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>

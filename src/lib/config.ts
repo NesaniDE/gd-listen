@@ -2,8 +2,8 @@ export const siteConfig = {
   name: 'GD Listen',
   shortName: 'GD Listen',
   description:
-    'Die besten Top-10 Listen für Schwäbisch Gmünd — kuratierte lokale Empfehlungen für Gastro, Freizeit, Dienstleister, Beauty und Gesundheit.',
-  shortDescription: 'Lokale Top-10 Empfehlungen für Schwäbisch Gmünd.',
+    'Redaktionelle Top-10-Listen und lokale Empfehlungen für Schwäbisch Gmünd — eingeordnet für Gastro, Freizeit, Dienstleister, Beauty und Gesundheit.',
+  shortDescription: 'Redaktionelle lokale Empfehlungen für Schwäbisch Gmünd.',
   url: 'https://gd-listen-two.vercel.app',
   city: 'Schwäbisch Gmünd',
   cityShort: 'GD',

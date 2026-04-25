@@ -6,7 +6,7 @@ import { top10Lists } from '@/data/lists'
 export const metadata = {
   title: 'Alle Top-10 Listen',
   description:
-    'Übersicht aller Top-10 Listen für Schwäbisch Gmünd — kuratierte Empfehlungen für Restaurants, Cafés, Fitnessstudios, Friseure, Zahnärzte und mehr.',
+    'Übersicht redaktioneller Top-10-Listen für Schwäbisch Gmünd — Einordnungen zu Restaurants, Cafés, Fitnessstudios, Friseuren, Zahnärzten und mehr.',
   alternates: { canonical: '/top10' },
 }
 
@@ -16,7 +16,7 @@ export default function Top10OverviewPage() {
       <PageHero
         badge="Top-10 Übersicht"
         title="Alle aktuellen GD-Listen"
-        subtitle={`Aktuell ${top10Lists.length} veröffentlichte Top-10-Listen für Schwäbisch Gmünd. Die Plattform wächst Kategorie für Kategorie.`}
+        subtitle={`Aktuell ${top10Lists.length} veröffentlichte redaktionelle Listen für Schwäbisch Gmünd. Die Reihenfolgen spiegeln unsere Einschätzung wider und die Plattform wächst Kategorie für Kategorie.`}
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>

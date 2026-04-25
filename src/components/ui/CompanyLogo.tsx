@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getCompanyInitials, getCompanyLogoUrl } from '@/lib/company-brand'
 
 type CompanyLogoProps = {
@@ -45,13 +46,13 @@ export default function CompanyLogo({
       aria-label={hasLogo ? `${name} Logo` : `${name} Monogramm`}
     >
       {src ? (
-        <img
+        <Image
           src={src}
           alt={`${name} Logo`}
-          width={size - 16}
-          height={size - 16}
-          loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
+          width={size}
+          height={size}
+          priority={priority}
+          sizes={`${size}px`}
           style={{
             width: '72%',
             height: '72%',

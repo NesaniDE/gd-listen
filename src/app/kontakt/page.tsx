@@ -3,7 +3,7 @@ import PageHero from '@/components/layout/PageHero'
 export const metadata = {
   title: 'Kontakt',
   description:
-    'GD Listen ist eine redaktionelle Wissensbank für Schwäbisch Gmünd. Kontakt zu Korrekturen, Hinweisen und Eintragsanfragen über die Nesani UG.',
+    'GD Listen ist eine redaktionelle Wissensbank für Schwäbisch Gmünd. Kontakt zu Korrekturen, Entfernungsanfragen, Hinweisen und Eintragsanfragen über die Nesani UG.',
 }
 
 const contactItems = [
@@ -15,8 +15,8 @@ const contactItems = [
 
 const reasons = [
   {
-    title: 'Korrektur melden',
-    desc: 'Daten oder Beschreibungen eines Eintrags stimmen nicht mehr? Schreib uns kurz — wir prüfen und passen an.',
+    title: 'Korrektur oder Entfernung',
+    desc: 'Daten, Beschreibung oder Einordnung stimmen nicht mehr, oder dein Unternehmen soll geprüft entfernt werden? Schreib uns kurz — wir prüfen jede Anfrage redaktionell.',
   },
   {
     title: 'Eintrag vorschlagen',
@@ -38,7 +38,7 @@ export default function KontaktPage() {
       <PageHero
         badge="Kontakt"
         title="Schreib uns"
-        subtitle="GD Listen ist eine redaktionelle Wissensbank — wir nutzen kein Formular, sondern den direkten Weg per E-Mail."
+        subtitle="GD Listen ist eine redaktionelle Wissensbank — für Korrekturen, Entfernungsanfragen und Hinweise nutzen wir den direkten Weg per E-Mail."
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>

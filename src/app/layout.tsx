@@ -1,8 +1,23 @@
 import type { Metadata } from 'next'
+import { Inter, Instrument_Serif } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import CookieBanner from '@/components/ui/CookieBanner'
 import { siteConfig } from '@/lib/config'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans-source',
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-serif-source',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -96,10 +111,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body>
+      <body className={`${inter.variable} ${instrumentSerif.variable}`}>
         <Header />
         <main style={{ minHeight: '70vh' }}>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )

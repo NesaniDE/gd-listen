@@ -47,7 +47,7 @@ const faqItems = [
   {
     question: 'Wie kommt mein Unternehmen auf eine Liste?',
     answer:
-      'Grundsätzlich redaktionell: GD Listen beobachtet lokale Kategorien und baut daraus Top-10-Seiten. Unternehmen können zusätzlich anfragen, ob ihr Profil ergänzt oder überarbeitet werden soll.',
+      'Grundsätzlich redaktionell: GD Listen beobachtet lokale Kategorien und baut daraus Listen-Seiten. Unternehmen können zusätzlich anfragen, ob ihr Profil ergänzt, korrigiert oder überarbeitet werden soll.',
   },
   {
     question: 'Kann ich meinen Eintrag bearbeiten lassen?',
@@ -57,7 +57,12 @@ const faqItems = [
   {
     question: 'Wie wird die Reihenfolge bestimmt?',
     answer:
-      'Die Reihenfolge ist redaktionell und soll sich an lokaler Relevanz, Profilklarheit und Nutzwert für Suchende orientieren. Sie ist nicht einfach kaufbar.',
+      'Die Reihenfolge ist redaktionell und orientiert sich an lokaler Relevanz, Profilklarheit und Nutzwert für Suchende. Sie stellt unsere Einschätzung dar und ist nicht einfach kaufbar.',
+  },
+  {
+    question: 'Kann ich eine Korrektur oder Entfernung meines Unternehmens anfragen?',
+    answer:
+      'Ja. Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Bitte um Prüfung einer Entfernung können jederzeit an info@nesani.de gesendet werden.',
   },
   {
     question: 'Ist GD Listen nur für Schwäbisch Gmünd?',
@@ -81,7 +86,7 @@ export default function FuerUnternehmenPage() {
       <PageHero
         badge="Für Unternehmen"
         title="Werde Teil von GD Listen"
-        subtitle="Die Plattform ist auf Schwäbisch Gmünd fokussiert. Genau dadurch entsteht lokale Relevanz statt beliebiger Massenlistings."
+        subtitle="Die Plattform ist auf Schwäbisch Gmünd fokussiert. Listen und Reihenfolgen sind redaktionelle Einschätzungen und keine objektiven Qualitätsurteile."
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
@@ -248,7 +253,8 @@ export default function FuerUnternehmenPage() {
             }}
           >
             Die Website ist bereits inhaltlich gestartet. Unternehmen können ihre Daten später gezielt ergänzen oder
-            erweitern lassen. Die Kontaktlogik wird im nächsten Schritt technisch ergänzt.
+            erweitern lassen. Korrekturen oder die Prüfung einer Entfernung sind ebenfalls jederzeit auf Anfrage
+            möglich.
           </p>
         </section>
       </div>
