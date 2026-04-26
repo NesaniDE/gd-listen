@@ -5,6 +5,10 @@ export interface BlogPost {
   category: string
   publishedAt: string
   readingTime: string
+  relatedCategorySlug?: string
+  relatedSubcategorySlug?: string
+  relatedListSlugs?: string[]
+  relatedCompanySlugs?: string[]
   content: string[]
 }
 

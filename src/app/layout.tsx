@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -21,6 +21,17 @@ const instrumentSerif = Instrument_Serif({
   variable: '--font-serif-source',
 })
 
+const verification = {
+  ...(siteConfig.verification.google ? { google: siteConfig.verification.google } : {}),
+  ...(siteConfig.verification.bing
+    ? {
+        other: {
+          'msvalidate.01': siteConfig.verification.bing,
+        },
+      }
+    : {}),
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -34,9 +45,11 @@ export const metadata: Metadata = {
   publisher: siteConfig.publisher.name,
   applicationName: siteConfig.name,
   category: 'directory',
+  manifest: '/manifest.webmanifest',
   alternates: {
     canonical: '/',
   },
+  verification,
   openGraph: {
     type: 'website',
     locale: siteConfig.locale,
@@ -80,6 +93,11 @@ export const metadata: Metadata = {
     shortcut: ['/favicon-32.png'],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: siteConfig.themeColor,
+  colorScheme: 'light',
 }
 
 const websiteJsonLd = {

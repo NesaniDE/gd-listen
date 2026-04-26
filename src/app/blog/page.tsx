@@ -3,6 +3,7 @@ import BlogCard from '@/components/cards/BlogCard'
 import PageHero from '@/components/layout/PageHero'
 import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
+import { collectionPageJsonLd } from '@/lib/jsonld'
 
 export const metadata = createPageMetadata({
   title: 'Blog & Ratgeber',
@@ -15,6 +16,18 @@ export const metadata = createPageMetadata({
 export default function BlogPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            collectionPageJsonLd(
+              `Blog & Ratgeber in ${siteConfig.city}`,
+              'Lokale Ratgeber, Hintergründe und thematische Einordnungen von GD Listen für Schwäbisch Gmünd.',
+              '/blog',
+            ),
+          ),
+        }}
+      />
       <PageHero
         badge="Ratgeber"
         title="Blog & Ratgeber"
@@ -22,6 +35,13 @@ export default function BlogPage() {
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <section style={{ maxWidth: '820px', marginBottom: '2.5rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.75 }}>
+            Der Blog ergänzt die Listen und Profile um lokalen Kontext. Artikel sollen Suchende nicht auf einer
+            isolierten Content-Seite parken, sondern gezielt in die passenden Kategorien, Rankings und
+            Unternehmensprofile weiterführen.
+          </p>
+        </section>
         <div
           className="stagger-children"
           style={{

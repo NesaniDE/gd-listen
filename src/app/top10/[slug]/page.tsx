@@ -1,29 +1,38 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getListBySlug, top10Lists } from '@/data/lists'
+import { companies } from '@/data/companies'
 import { getCategoryBySlug } from '@/data/categories'
 import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
-import { breadcrumbJsonLd, top10ListJsonLd } from '@/lib/jsonld'
+import { breadcrumbJsonLd, faqJsonLd, top10ListJsonLd } from '@/lib/jsonld'
+import { getListSeoBlocks } from '@/lib/seo-content'
 import PageHero from '@/components/layout/PageHero'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import RankingCard from '@/components/cards/RankingCard'
 import RelatedLists from '@/components/sections/RelatedLists'
 import CTASection from '@/components/sections/CTASection'
+import CompanyCard from '@/components/cards/CompanyCard'
+import FAQSection from '@/components/ui/FAQSection'
 
 export async function generateStaticParams() {
-  return top10Lists.map((l) => ({ slug: l.slug }))
+  return top10Lists.map((list) => ({ slug: list.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const list = getListBySlug(params.slug)
   if (!list) return {}
-  const path = `/top10/${list.slug}`
+
+  const category = getCategoryBySlug(list.categorySlug)
+  const description =
+    list.seoIntro ||
+    `${list.title} in ${siteConfig.city}: redaktionelle Orientierung mit lokalem Kontext, passenden Unternehmensprofilen und klarer thematischer Einordnung.`
+
   return createPageMetadata({
     title: list.title,
-    description: list.intro.slice(0, 160),
-    path,
-    keywords: [list.title, ...siteConfig.keywords],
+    description,
+    path: `/top10/${list.slug}`,
+    keywords: [list.title, category?.label || '', siteConfig.city, ...siteConfig.keywords].filter(Boolean),
     type: 'article',
     section: list.categorySlug,
   })
@@ -34,6 +43,11 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
   if (!list) notFound()
 
   const category = getCategoryBySlug(list.categorySlug)
+  const seoBlocks = getListSeoBlocks(list, category)
+  const featuredCompanies = list.entries
+    .slice(0, 4)
+    .map((entry) => companies.find((company) => company.slug === entry.slug))
+    .filter((company): company is NonNullable<typeof company> => Boolean(company))
 
   const breadcrumbs = [
     { name: 'Start', href: '/' },
@@ -52,6 +66,10 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(seoBlocks.faq)) }}
+      />
 
       <div className="section-container">
         <Breadcrumbs
@@ -63,9 +81,9 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
         />
       </div>
 
-      <PageHero badge="Top 10 Liste" title={list.title} subtitle={list.intro}>
+      <PageHero badge="Top-10 Liste" title={list.title} subtitle={list.intro}>
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-          <span className="badge badge-purple">Aktualisiert {list.updatedAt}</span>
+          <span className="badge badge-purple">Aktualisiert {list.lastReviewedAt || list.updatedAt}</span>
           <span className="badge badge-purple">10 Einträge</span>
           {category && <span className="badge badge-purple">{category.label}</span>}
         </div>
@@ -100,6 +118,13 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
           </p>
         </section>
 
+        <section style={{ marginBottom: '2rem', maxWidth: '820px' }}>
+          <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+            Worum es hier geht
+          </span>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.75 }}>{seoBlocks.intro}</p>
+        </section>
+
         <ol
           className="stagger-children"
           style={{
@@ -119,6 +144,110 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
           ))}
         </ol>
 
+        <section style={{ marginBottom: '4rem' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '1.5rem',
+            }}
+            className="list-seo-grid"
+          >
+            <div
+              style={{
+                padding: '1.5rem',
+                borderRadius: '16px',
+                border: '1px solid var(--border)',
+                background: 'var(--surface)',
+              }}
+            >
+              <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+                Für wen diese Liste hilfreich ist
+              </span>
+              <div style={{ display: 'grid', gap: '0.75rem' }}>
+                {seoBlocks.idealFor.map((item) => (
+                  <div
+                    key={item}
+                    style={{
+                      padding: '0.85rem 0.95rem',
+                      borderRadius: '12px',
+                      border: '1px solid var(--border)',
+                      background: 'rgba(255,255,255,0.7)',
+                      color: 'var(--text-muted)',
+                      fontSize: '0.88rem',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div
+              style={{
+                padding: '1.5rem',
+                borderRadius: '16px',
+                border: '1px solid var(--border)',
+                background: 'linear-gradient(180deg, rgba(247, 243, 234, 0.9), rgba(247, 243, 234, 0.45))',
+              }}
+            >
+              <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+                Woran GD Listen orientiert
+              </span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {seoBlocks.signals.map((signal) => (
+                  <span
+                    key={signal}
+                    style={{
+                      padding: '0.55rem 0.75rem',
+                      borderRadius: '999px',
+                      border: '1px solid var(--border)',
+                      background: 'rgba(255,255,255,0.7)',
+                      color: 'var(--text)',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    {signal}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {featuredCompanies.length > 0 && (
+          <section style={{ marginBottom: '4rem' }}>
+            <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+              Profile aus dieser Liste
+            </span>
+            <h2 className="section-title" style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>
+              Unternehmen mit thematischer Passung
+            </h2>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gap: '1rem',
+              }}
+            >
+              {featuredCompanies.map((company) => (
+                <CompanyCard key={company.slug} company={company} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section style={{ marginBottom: '4rem', maxWidth: '820px' }}>
+          <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+            Häufige Fragen
+          </span>
+          <h2 className="section-title" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
+            Mehr Kontext zu dieser Top-10-Liste
+          </h2>
+          <FAQSection items={seoBlocks.faq} />
+        </section>
+
         <CTASection
           badge="Für Unternehmen"
           title="Bist du auf dieser Liste?"
@@ -131,6 +260,12 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
 
         <RelatedLists currentSlug={list.slug} categorySlug={list.categorySlug} />
       </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .list-seo-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }

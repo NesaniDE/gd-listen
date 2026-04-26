@@ -8,42 +8,83 @@ import TopListCard from '@/components/cards/TopListCard'
 import CompanyCard from '@/components/cards/CompanyCard'
 import BlogCard from '@/components/cards/BlogCard'
 import SearchPlaceholder from '@/components/ui/SearchPlaceholder'
+import { siteConfig } from '@/lib/config'
+import { createPageMetadata } from '@/lib/metadata'
+import { getPublishedSubcategories, getPublishedSubcategoryCount } from '@/lib/site-structure'
+
+export const metadata = createPageMetadata({
+  title: `Top-10 Listen & lokale Empfehlungen in ${siteConfig.city}`,
+  description:
+    'GD Listen bündelt redaktionelle Top-10-Listen, Unternehmensprofile und lokale Ratgeber für Schwäbisch Gmünd. Entdecke Restaurants, Cafés, Handwerk, Dienstleister und mehr.',
+  path: '/',
+  keywords: ['GD Listen', siteConfig.city, 'Top-10 Listen', 'lokale Empfehlungen', ...siteConfig.keywords],
+})
 
 export default function HomePage() {
   const stats = [
-    { value: String(categories.length), label: 'Kategorien' },
+    { value: String(categories.length), label: 'Hauptkategorien' },
+    { value: String(getPublishedSubcategoryCount()), label: 'veröffentlichte Themenfelder' },
     { value: String(top10Lists.length), label: 'Top-10 Listen' },
     { value: String(companies.length), label: 'Unternehmensprofile' },
-    { value: '1', label: 'Stadt im Fokus' },
   ]
+
+  const categoryHighlights = categories
+    .map((category) => ({
+      ...category,
+      publishedCount: getPublishedSubcategories(category).length,
+    }))
+    .sort((left, right) => right.publishedCount - left.publishedCount)
+    .slice(0, 6)
+
+  const localSearchMoments = [
+    {
+      title: 'Essen & Ausgehen',
+      description:
+        'Von Restaurants über Frühstück bis Cocktailbars: starke Einstiege für Suchanfragen mit klarer lokaler Kauf- oder Besuchsabsicht.',
+      href: '/kategorie/gastro',
+    },
+    {
+      title: 'Freizeit & Alltag',
+      description:
+        'Fitness, Familienorte, Date-Spots und Freizeitangebote werden thematisch gebündelt statt nur lose verlinkt.',
+      href: '/kategorie/freizeit',
+    },
+    {
+      title: 'Dienstleister & Handwerk',
+      description:
+        'Für konkrete Suchmomente wie Friseur, Steuerberater, Webagentur, Elektriker oder Sanitärbetrieb.',
+      href: '/kategorie/dienstleister',
+    },
+  ]
+
+  const searchExamples = top10Lists.slice(0, 8)
 
   const principles = [
     {
-      title: 'Lokal',
-      desc: 'Keine deutschlandweiten Trefferlisten. Nur Schwäbisch Gmünd, dafür mit Kontext.',
+      title: 'Lokal statt beliebig',
+      desc: 'Keine deutschlandweiten Trefferlisten. Nur Schwäbisch Gmünd, dafür mit echtem Stadtbezug.',
     },
     {
-      title: 'Kuratiert',
-      desc: 'Redaktionell eingeordnet statt algorithmisch gewürfelt. Die Reihenfolge ist unsere Einschätzung, nicht der einzig richtige Maßstab.',
+      title: 'Redaktionell statt ungefiltert',
+      desc: 'Reihenfolgen und Einordnungen sind unsere Meinung und sollen Orientierung geben, nicht absolute Wahrheit simulieren.',
     },
     {
-      title: 'Klar',
-      desc: 'Kein Branchenbuch-Ballast. Klare Kategorien, Profile und Sprache.',
+      title: 'Cluster statt Einzelseite',
+      desc: 'Kategorien, Listen, Unternehmensprofile und Blogartikel greifen ineinander und stärken sich gegenseitig.',
     },
     {
-      title: 'Skalierbar',
-      desc: 'Kategorie für Kategorie wachsend. Aufgebaut, um zu bestehen.',
+      title: 'Wachsend statt statisch',
+      desc: 'Neue Themen werden bewusst in sinnvollen Clustern ergänzt, damit keine leeren Platzhalterseiten dominieren.',
     },
   ]
 
   return (
     <div>
-      {/* Hero */}
       <section style={{ padding: '7rem 0 5rem' }}>
         <div className="section-container">
-          <div style={{ maxWidth: '820px' }}>
+          <div style={{ maxWidth: '860px' }}>
             <span className="eyebrow" style={{ marginBottom: '1.5rem', display: 'inline-block' }}>
-              Lokales Verzeichnis · Schwäbisch Gmünd
+              Lokale Empfehlungen · {siteConfig.city}
             </span>
 
             <h1
@@ -54,10 +95,10 @@ export default function HomePage() {
                 lineHeight: 1.05,
               }}
             >
-              Lokale Empfehlungen.
+              Top-10 Listen und lokale Empfehlungen
               <br />
               <span className="font-serif" style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-                Redaktionell eingeordnet.
+                für Schwäbisch Gmünd.
               </span>
             </h1>
 
@@ -65,14 +106,14 @@ export default function HomePage() {
               style={{
                 color: 'var(--text-muted)',
                 fontSize: '1.125rem',
-                lineHeight: 1.55,
-                maxWidth: '640px',
+                lineHeight: 1.6,
+                maxWidth: '700px',
                 marginBottom: '2.5rem',
               }}
             >
-              GD Listen bündelt redaktionelle Top-10-Listen und lokale Unternehmensprofile für Gastro, Freizeit,
-              Dienstleister, Beauty und Gesundheit — nur für Schwäbisch Gmünd. Die Reihenfolgen spiegeln unsere
-              Einschätzung wider und erheben keinen Anspruch auf objektive Vollständigkeit.
+              GD Listen bündelt redaktionelle Top-10-Listen, lokale Unternehmensprofile und thematische Ratgeber für
+              Suchanfragen mit echtem Stadtbezug. Ob Restaurants, Cafés, Handwerk, Dienstleister, Freizeit oder
+              Gesundheit: Die Plattform soll schnelle Orientierung geben, ohne objektive Vollständigkeit zu behaupten.
             </p>
 
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
@@ -80,14 +121,13 @@ export default function HomePage() {
                 Alle Top-10 Listen
               </Link>
               <Link href="/kategorie" className="btn-outline">
-                Nach Kategorie
+                Nach Kategorie suchen
               </Link>
             </div>
 
             <SearchPlaceholder />
           </div>
 
-          {/* Stats */}
           <div
             style={{
               display: 'grid',
@@ -99,13 +139,13 @@ export default function HomePage() {
             }}
             className="hero-stats"
           >
-            {stats.map((stat, i) => (
+            {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 style={{
                   padding: '0.5rem 0',
-                  borderLeft: i > 0 ? '1px solid var(--border)' : 'none',
-                  paddingLeft: i > 0 ? '1.5rem' : 0,
+                  borderLeft: index > 0 ? '1px solid var(--border)' : 'none',
+                  paddingLeft: index > 0 ? '1.5rem' : 0,
                 }}
                 className="hero-stat"
               >
@@ -122,14 +162,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories */}
+      <section style={{ padding: '0 0 5rem' }}>
+        <div className="section-container">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1.2fr 1fr',
+              gap: '2rem',
+              alignItems: 'start',
+            }}
+            className="hub-grid"
+          >
+            <div
+              style={{
+                padding: '1.75rem',
+                borderRadius: '20px',
+                border: '1px solid var(--border)',
+                background: 'linear-gradient(180deg, rgba(247, 243, 234, 0.95), rgba(247, 243, 234, 0.55))',
+              }}
+            >
+              <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+                Warum diese Startseite wichtig ist
+              </span>
+              <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.1rem)', marginBottom: '1rem' }}>
+                Ein lokaler Hub statt einer bloßen Übersicht.
+              </h2>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1rem' }}>
+                Die Startseite verknüpft die wichtigsten Suchintentionen für {siteConfig.city}: Essen gehen,
+                Dienstleister vergleichen, Handwerker finden, Freizeit planen oder lokale Unternehmen genauer
+                einordnen. Dadurch entsteht ein klarer Einstieg für Menschen, die nicht nur einen Namen, sondern
+                thematisch passende Empfehlungen suchen.
+              </p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.75 }}>
+                Jede stärkere Themenroute führt von hier weiter in Kategorien, Unterkategorien, Top-10-Listen,
+                Unternehmensprofile und Blogartikel. Genau diese interne Verlinkung macht GD Listen für Nutzer und
+                Suchmaschinen deutlich nachvollziehbarer.
+              </p>
+            </div>
+
+            <div
+              style={{
+                padding: '1.75rem',
+                borderRadius: '20px',
+                border: '1px solid var(--border)',
+                background: 'var(--surface)',
+              }}
+            >
+              <span className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>
+                Häufige Suchanlässe
+              </span>
+              <div style={{ display: 'grid', gap: '0.875rem' }}>
+                {localSearchMoments.map((moment) => (
+                  <Link
+                    key={moment.title}
+                    href={moment.href}
+                    style={{
+                      padding: '0.95rem 1rem',
+                      borderRadius: '12px',
+                      border: '1px solid var(--border)',
+                      color: 'var(--text)',
+                      background: 'rgba(255,255,255,0.65)',
+                    }}
+                  >
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.35rem' }}>{moment.title}</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.55 }}>
+                      {moment.description}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
-          <SectionHeader
-            eyebrow="Kategorien"
-            title="Was suchst du in GD?"
-            link={{ href: '/kategorie', label: 'Alle Kategorien' }}
-          />
+          <SectionHeader eyebrow="Kategorien" title="Die wichtigsten Themenfelder in GD" link={{ href: '/kategorie', label: 'Alle Kategorien' }} />
 
           <div
             className="stagger-children"
@@ -137,23 +246,46 @@ export default function HomePage() {
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
               gap: '1rem',
+              marginBottom: '2rem',
             }}
           >
-            {categories.map((cat) => (
-              <CategoryCard key={cat.slug} category={cat} />
+            {categories.map((category) => (
+              <CategoryCard key={category.slug} category={category} />
+            ))}
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1rem',
+            }}
+          >
+            {categoryHighlights.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/kategorie/${category.slug}`}
+                style={{
+                  padding: '1.1rem 1.15rem',
+                  borderRadius: '14px',
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text)',
+                }}
+              >
+                <div style={{ fontWeight: 600, marginBottom: '0.4rem' }}>{category.label}</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.55 }}>
+                  {category.publishedCount} veröffentlichte Themenfelder mit passenden Listen und lokalen Einordnungen.
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Top-10 */}
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
-          <SectionHeader
-            eyebrow="Aktuelle Listen"
-            title="Top-10 Empfehlungen"
-            link={{ href: '/top10', label: 'Alle Listen' }}
-          />
+          <SectionHeader eyebrow="Aktuelle Listen" title="Top-10 Empfehlungen mit lokalem Kontext" link={{ href: '/top10', label: 'Alle Listen' }} />
 
           <div
             style={{
@@ -169,16 +301,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Principles */}
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
-          <div style={{ marginBottom: '3rem', maxWidth: '720px' }}>
+          <div style={{ marginBottom: '3rem', maxWidth: '760px' }}>
             <span className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>
-              Prinzipien
+              Lokale Cluster
             </span>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)' }}>
-              Anders als ein Branchenbuch.
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)', marginBottom: '1rem' }}>
+              Wie Nutzer sich durch die Plattform bewegen können.
             </h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.7 }}>
+              Gute lokale Sichtbarkeit entsteht nicht nur durch einzelne Metadaten, sondern durch klare Wege:
+              Startseite zu Kategorie, Kategorie zu Liste, Liste zum Unternehmen und von dort wieder in verwandte
+              Themen. Genau dieses Muster bildet GD Listen Schritt für Schritt aus.
+            </p>
           </div>
 
           <div
@@ -190,13 +326,13 @@ export default function HomePage() {
             }}
             className="principles-grid"
           >
-            {principles.map((p, i) => (
+            {principles.map((principle, index) => (
               <div
-                key={p.title}
+                key={principle.title}
                 style={{
                   padding: '2rem 1.5rem 2rem 0',
-                  borderRight: i < principles.length - 1 ? '1px solid var(--border)' : 'none',
-                  paddingLeft: i > 0 ? '1.5rem' : 0,
+                  borderRight: index < principles.length - 1 ? '1px solid var(--border)' : 'none',
+                  paddingLeft: index > 0 ? '1.5rem' : 0,
                 }}
                 className="principle-item"
               >
@@ -204,30 +340,47 @@ export default function HomePage() {
                   className="font-serif"
                   style={{ fontSize: '1.5rem', color: 'var(--text-subtle)', marginBottom: '1rem', lineHeight: 1 }}
                 >
-                  0{i + 1}
+                  0{index + 1}
                 </div>
-                <h3
-                  style={{
-                    fontWeight: 600,
-                    fontSize: '1.05rem',
-                    color: 'var(--text)',
-                    marginBottom: '0.5rem',
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  {p.title}
+                <h3 style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text)', marginBottom: '0.5rem' }}>
+                  {principle.title}
                 </h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', lineHeight: 1.6 }}>{p.desc}</p>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', lineHeight: 1.6 }}>{principle.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Companies */}
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
-          <SectionHeader eyebrow="Beispielprofile" title="So sehen Unternehmensprofile aus" />
+          <SectionHeader eyebrow="Beliebte Suchen" title="Direkte Einstiege in starke Listen" />
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            {searchExamples.map((list) => (
+              <Link
+                key={list.slug}
+                href={`/top10/${list.slug}`}
+                className="subcat-link"
+                style={{
+                  fontWeight: 500,
+                  fontSize: '0.85rem',
+                  padding: '0.6rem 0.95rem',
+                  borderRadius: '999px',
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text)',
+                }}
+              >
+                {list.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '5rem 0' }}>
+        <div className="section-container">
+          <SectionHeader eyebrow="Beispielprofile" title="Unternehmen mit klarer Einordnung" />
           <div
             style={{
               display: 'grid',
@@ -242,7 +395,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* For Businesses CTA */}
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
           <div
@@ -262,51 +414,45 @@ export default function HomePage() {
               <span className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>
                 Für Unternehmen
               </span>
-              <h2
-                className="section-title"
-                style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)', marginBottom: '1rem' }}
-              >
-                Lokal sichtbar werden — im richtigen Kontext.
+              <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)', marginBottom: '1rem' }}>
+                Lokal sichtbar werden, ohne im Verzeichnisrauschen unterzugehen.
               </h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
-                Statt anonymem Massenlisting eine thematisch passende Einordnung in einer Stadt, die für Nutzer klar,
-                übersichtlich und lokal relevant bleibt.
+                Unternehmen profitieren auf GD Listen nicht nur von einer Profilseite, sondern von thematischer
+                Einbindung in passende Listen, Kategorien und redaktionelle Cluster.
               </p>
               <Link href="/fuer-unternehmen" className="btn-primary">
                 Mehr erfahren
               </Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-              {['Lokale Sichtbarkeit', 'Profilseite mit Kontext', 'Klare Kategorien', 'Später erweiterbar'].map((b, i) => (
-                <div
-                  key={b}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.625rem',
-                    padding: '0.875rem 0',
-                    borderTop: i === 0 ? 'none' : '1px solid var(--border)',
-                  }}
-                >
-                  <svg width="14" height="14" fill="none" stroke="var(--text-muted)" strokeWidth={1.75} viewBox="0 0 24 24">
-                    <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span style={{ color: 'var(--text)', fontSize: '0.9rem' }}>{b}</span>
-                </div>
-              ))}
+              {['Lokale Sichtbarkeit', 'Profilseite mit Kontext', 'Interne Linkstruktur', 'Später erweiterbar'].map(
+                (benefit, index) => (
+                  <div
+                    key={benefit}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.625rem',
+                      padding: '0.875rem 0',
+                      borderTop: index === 0 ? 'none' : '1px solid var(--border)',
+                    }}
+                  >
+                    <svg width="14" height="14" fill="none" stroke="var(--text-muted)" strokeWidth={1.75} viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span style={{ color: 'var(--text)', fontSize: '0.9rem' }}>{benefit}</span>
+                  </div>
+                ),
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Blog */}
       <section style={{ padding: '5rem 0' }}>
         <div className="section-container">
-          <SectionHeader
-            eyebrow="Ratgeber"
-            title="Aus dem Blog"
-            link={{ href: '/blog', label: 'Alle Artikel' }}
-          />
+          <SectionHeader eyebrow="Ratgeber" title="Lokale Einordnung aus dem Blog" link={{ href: '/blog', label: 'Alle Artikel' }} />
           <div
             style={{
               display: 'grid',
@@ -322,8 +468,15 @@ export default function HomePage() {
       </section>
 
       <style>{`
-        @media (max-width: 760px) {
+        .subcat-link:hover {
+          border-color: var(--border-strong) !important;
+          background: var(--surface-hover) !important;
+        }
+        @media (max-width: 920px) {
+          .hub-grid { grid-template-columns: 1fr !important; }
           .cta-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 760px) {
           .principles-grid { grid-template-columns: 1fr !important; }
           .principle-item { border-right: none !important; border-bottom: 1px solid var(--border); padding-left: 0 !important; }
           .principle-item:last-child { border-bottom: none; }
@@ -359,10 +512,7 @@ function SectionHeader({
         <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
           {eyebrow}
         </span>
-        <h2
-          className="section-title"
-          style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)' }}
-        >
+        <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)' }}>
           {title}
         </h2>
       </div>

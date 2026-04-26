@@ -1,3 +1,5 @@
+import type { FAQItem } from '@/lib/content-types'
+
 export interface Company {
   slug: string
   name: string
@@ -11,6 +13,10 @@ export interface Company {
   logo?: string
   tags: string[]
   services?: string[]
+  district?: string
+  specializations?: string[]
+  reviewNote?: string
+  faq?: FAQItem[]
   featured: boolean
 }
 

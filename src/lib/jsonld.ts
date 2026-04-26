@@ -4,6 +4,7 @@ import type { Top10List } from '@/data/lists'
 import type { Company } from '@/data/companies'
 import type { BlogPost } from '@/data/blog'
 import type { Category } from '@/data/categories'
+import type { FAQItem } from './content-types'
 
 type Crumb = { name: string; href: string }
 
@@ -118,6 +119,21 @@ export function collectionPageJsonLd(name: string, description: string, path: st
     url: `${siteConfig.url}${path}`,
     inLanguage: siteConfig.locale,
     isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+  }
+}
+
+export function faqJsonLd(items: FAQItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   }
 }
 

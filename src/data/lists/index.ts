@@ -1,4 +1,5 @@
 import { companies } from '@/data/companies'
+import type { FAQItem } from '@/lib/content-types'
 
 export interface RankingEntry {
   rank: number
@@ -17,6 +18,10 @@ export interface Top10List {
   subcategorySlug: string
   updatedAt: string
   intro: string
+  seoIntro?: string
+  whyItMatters?: string
+  faq?: FAQItem[]
+  lastReviewedAt?: string
   entries: RankingEntry[]
 }
 

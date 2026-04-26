@@ -4,6 +4,7 @@ import { categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
 import { companies } from '@/data/companies'
 import { blogPosts } from '@/data/blog'
+import { getPublishedSubcategories } from '@/lib/site-structure'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url
@@ -23,17 +24,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/datenschutz`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
 
-  const categoryEntries: MetadataRoute.Sitemap = categories.map((c) => ({
-    url: `${base}/kategorie/${c.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }))
+  const categoryEntries: MetadataRoute.Sitemap = categories.map((c) => {
+    const categoryLists = top10Lists.filter((list) => list.categorySlug === c.slug)
+    const latestUpdate = categoryLists
+      .map((list) => parseListDate(list.updatedAt))
+      .sort((left, right) => right.getTime() - left.getTime())[0]
+
+    return {
+      url: `${base}/kategorie/${c.slug}`,
+      lastModified: latestUpdate || now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }
+  })
 
   const subcategoryEntries: MetadataRoute.Sitemap = categories.flatMap((c) =>
-    c.subcategories.map((s) => ({
+    getPublishedSubcategories(c).map((s) => ({
       url: `${base}/kategorie/${c.slug}/${s.slug}`,
-      lastModified: now,
+      lastModified: parseListDate(top10Lists.find((list) => list.slug === s.listSlug)?.updatedAt || '2026-04'),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     })),

@@ -1,20 +1,13 @@
-function normalizeSiteUrl(value?: string) {
-  if (!value) return null
-  const withProtocol = value.startsWith('http://') || value.startsWith('https://') ? value : `https://${value}`
-
-  try {
-    return new URL(withProtocol).toString().replace(/\/$/, '')
-  } catch {
-    return null
-  }
+const searchVerification = {
+  google:
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+    process.env.GOOGLE_SITE_VERIFICATION ||
+    '',
+  bing:
+    process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ||
+    process.env.BING_SITE_VERIFICATION ||
+    '',
 }
-
-const resolvedSiteUrl =
-  normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
-  normalizeSiteUrl(process.env.SITE_URL) ||
-  normalizeSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
-  normalizeSiteUrl(process.env.VERCEL_URL) ||
-  'https://gd-listen-two.vercel.app'
 
 export const siteConfig = {
   name: 'GD Listen',
@@ -22,7 +15,7 @@ export const siteConfig = {
   description:
     'Redaktionelle Top-10-Listen und lokale Empfehlungen für Schwäbisch Gmünd — eingeordnet für Gastro, Freizeit, Dienstleister, Beauty und Gesundheit.',
   shortDescription: 'Redaktionelle lokale Empfehlungen für Schwäbisch Gmünd.',
-  url: resolvedSiteUrl,
+  url: 'https://www.gd-listen.de',
   city: 'Schwäbisch Gmünd',
   cityShort: 'GD',
   region: 'Baden-Württemberg',
@@ -37,7 +30,9 @@ export const siteConfig = {
     email: 'info@nesani.de',
   },
   twitter: '@nesani_de',
-  ogImage: '/og.png',
+  ogImage: '/opengraph-image',
+  themeColor: '#f7f3ea',
+  verification: searchVerification,
   keywords: [
     'Schwäbisch Gmünd',
     'GD Listen',

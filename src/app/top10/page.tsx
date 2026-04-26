@@ -4,6 +4,7 @@ import { categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
 import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
+import { collectionPageJsonLd } from '@/lib/jsonld'
 
 export const metadata = createPageMetadata({
   title: 'Alle Top-10 Listen',
@@ -16,6 +17,18 @@ export const metadata = createPageMetadata({
 export default function Top10OverviewPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            collectionPageJsonLd(
+              `Top-10 Listen in ${siteConfig.city}`,
+              'Alle veröffentlichten redaktionellen Top-10-Listen von GD Listen für Schwäbisch Gmünd.',
+              '/top10',
+            ),
+          ),
+        }}
+      />
       <PageHero
         badge="Top-10 Übersicht"
         title="Alle aktuellen GD-Listen"
@@ -23,6 +36,13 @@ export default function Top10OverviewPage() {
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <section style={{ maxWidth: '860px', marginBottom: '2.5rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.75 }}>
+            Diese Übersicht bündelt alle bereits veröffentlichten Rankings von GD Listen. Dadurch lassen sich Themen
+            direkt vergleichen, einzelne Suchintentionen schneller ansteuern und neue Cluster innerhalb von
+            Schwäbisch Gmünd besser entdecken.
+          </p>
+        </section>
         <div style={{ display: 'grid', gap: '4rem' }}>
           {categories.map((category) => {
             const listsForCategory = top10Lists.filter((list) => list.categorySlug === category.slug)
