@@ -16,7 +16,6 @@ const contactItems = [
   { label: 'Betreiber', value: 'Nesani UG (haftungsbeschränkt) i.G.', href: 'https://www.nesani.de' },
   { label: 'E-Mail', value: contactEmail, href: `mailto:${contactEmail}` },
   { label: 'Standort', value: 'Schwäbisch Gmünd, Baden-Württemberg' },
-  { label: 'Adresse', value: 'Basilikumweg 8, 73527 Schwäbisch Gmünd' },
 ]
 
 const reasons = [
