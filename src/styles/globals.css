@@ -307,22 +307,7 @@ button {
 
 .route-transition-content {
   position: relative;
-  isolation: isolate;
   animation: routeContentIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-}
-
-.route-transition-content::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 220px;
-  pointer-events: none;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 12% 10%, rgba(232, 185, 72, 0.16), transparent 36%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 72%);
-  opacity: 0;
-  animation: routeGlow 0.8s ease-out both;
 }
 
 @keyframes fadeIn {
@@ -339,29 +324,11 @@ button {
   from {
     opacity: 0;
     transform: translateY(18px) scale(0.995);
-    filter: blur(10px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes routeGlow {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.78;
-    transform: translateY(0);
   }
 }
 
@@ -411,7 +378,6 @@ button {
 
   .route-transition-bar,
   .route-transition-content,
-  .route-transition-content::before,
   .stagger-children > * {
     animation: none !important;
   }
