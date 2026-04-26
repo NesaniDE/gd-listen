@@ -113,7 +113,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 padding: '1.5rem',
                 borderRadius: '16px',
                 border: '1px solid var(--border)',
-                background: 'linear-gradient(180deg, rgba(247, 243, 234, 0.9), rgba(247, 243, 234, 0.45))',
+                background: 'linear-gradient(180deg, rgba(24, 25, 30, 0.98), rgba(15, 15, 18, 0.98))',
               }}
             >
               <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
@@ -215,7 +215,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           border-radius: 999px;
           border: 1px solid var(--border);
           color: var(--text);
-          background: rgba(255,255,255,0.7);
+          background: var(--bg-elevated);
         }
         .cluster-link:hover {
           border-color: var(--border-strong);

@@ -356,7 +356,7 @@ export default function UnternehmenPage({ params }: { params: { slug: string } }
           border-radius: 12px;
           border: 1px solid var(--border);
           color: var(--text);
-          background: rgba(255,255,255,0.7);
+          background: var(--bg-elevated);
         }
         @media (max-width: 860px) {
           .company-grid { grid-template-columns: 1fr !important; }

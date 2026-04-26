@@ -178,7 +178,7 @@ export default function HomePage() {
                 padding: '1.75rem',
                 borderRadius: '20px',
                 border: '1px solid var(--border)',
-                background: 'linear-gradient(180deg, rgba(247, 243, 234, 0.95), rgba(247, 243, 234, 0.55))',
+                background: 'linear-gradient(180deg, rgba(24, 25, 30, 0.98), rgba(15, 15, 18, 0.98))',
               }}
             >
               <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
@@ -221,7 +221,7 @@ export default function HomePage() {
                       borderRadius: '12px',
                       border: '1px solid var(--border)',
                       color: 'var(--text)',
-                      background: 'rgba(255,255,255,0.65)',
+                      background: 'var(--bg-elevated)',
                     }}
                   >
                     <div style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: '0.35rem' }}>{moment.title}</div>

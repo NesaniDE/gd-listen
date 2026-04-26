@@ -172,8 +172,8 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
                       padding: '0.85rem 0.95rem',
                       borderRadius: '12px',
                       border: '1px solid var(--border)',
-                      background: 'rgba(255,255,255,0.7)',
-                      color: 'var(--text-muted)',
+                      background: 'var(--bg-elevated)',
+                      color: 'var(--text)',
                       fontSize: '0.88rem',
                       lineHeight: 1.6,
                     }}
@@ -189,7 +189,7 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
                 padding: '1.5rem',
                 borderRadius: '16px',
                 border: '1px solid var(--border)',
-                background: 'linear-gradient(180deg, rgba(247, 243, 234, 0.9), rgba(247, 243, 234, 0.45))',
+                background: 'linear-gradient(180deg, rgba(24, 25, 30, 0.98), rgba(15, 15, 18, 0.98))',
               }}
             >
               <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
@@ -203,7 +203,7 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
                       padding: '0.55rem 0.75rem',
                       borderRadius: '999px',
                       border: '1px solid var(--border)',
-                      background: 'rgba(255,255,255,0.7)',
+                      background: 'var(--bg-elevated)',
                       color: 'var(--text)',
                       fontSize: '0.8rem',
                     }}
