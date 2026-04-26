@@ -27,7 +27,7 @@ export const siteConfig = {
     name: 'Nesani UG (haftungsbeschränkt) i.G.',
     url: 'https://www.nesani.de',
     address: 'Basilikumweg 8, 73527 Schwäbisch Gmünd',
-    email: 'info@nesani.de',
+    email: 'gd-listen@gd-listen.de',
   },
   twitter: '@nesani_de',
   ogImage: '/opengraph-image',
