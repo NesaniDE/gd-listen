@@ -1,4 +1,5 @@
 import PageHero from '@/components/layout/PageHero'
+import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
 
 export const metadata = createPageMetadata({
@@ -12,7 +13,7 @@ const sections = [
   {
     title: 'Verantwortliche Stelle',
     text:
-      'Verantwortlich für diese Website ist die Nesani UG (haftungsbeschränkt) i.G., Basilikumweg 8, 73527 Schwäbisch Gmünd, E-Mail: info@nesani.de. Diese Hinweise bilden den aktuellen technischen Stand der Website vom 25. April 2026 ab.',
+      `Verantwortlich für diese Website ist die Nesani UG (haftungsbeschränkt) i.G., Basilikumweg 8, 73527 Schwäbisch Gmünd, E-Mail: ${siteConfig.publisher.email}. Diese Hinweise bilden den aktuellen technischen Stand der Website vom 25. April 2026 ab.`,
   },
   {
     title: 'Hosting und Server-Logfiles',
@@ -52,7 +53,7 @@ const sections = [
   {
     title: 'Deine Rechte',
     text:
-      'Du hast im Rahmen der gesetzlichen Vorgaben insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch. Hinweise zu redaktionellen Profilen, fehlerhaften Angaben oder der Wunsch nach Prüfung einer Entfernung können an info@nesani.de gerichtet werden.',
+      `Du hast im Rahmen der gesetzlichen Vorgaben insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch. Hinweise zu redaktionellen Profilen, fehlerhaften Angaben oder der Wunsch nach Prüfung einer Entfernung können an ${siteConfig.publisher.email} gerichtet werden.`,
   },
 ]
 

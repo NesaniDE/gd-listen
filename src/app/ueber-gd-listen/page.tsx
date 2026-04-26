@@ -38,7 +38,7 @@ export default function UeberGdListenPage() {
     },
     {
       title: 'Korrektur & Entfernung',
-      text: 'Unternehmen können Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Prüfung einer Entfernung jederzeit per E-Mail an info@nesani.de anstoßen. Transparenz und Aktualität sind wichtiger als starre Listenplätze.',
+      text: `Unternehmen können Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Prüfung einer Entfernung jederzeit per E-Mail an ${siteConfig.publisher.email} anstoßen. Transparenz und Aktualität sind wichtiger als starre Listenplätze.`,
     },
   ]
 

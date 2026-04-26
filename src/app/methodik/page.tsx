@@ -57,7 +57,7 @@ const faqItems = [
   {
     question: 'Was tue ich, wenn mein Unternehmen falsch eingetragen ist oder entfernt werden soll?',
     answer:
-      'Über die Kontaktseite oder per E-Mail an info@nesani.de kann eine Korrektur, Ergänzung oder die Prüfung einer Entfernung angefragt werden. Ziel ist eine saubere, aktuelle und faire Darstellung aller gelisteten Profile.',
+      `Über die Kontaktseite oder per E-Mail an ${siteConfig.publisher.email} kann eine Korrektur, Ergänzung oder die Prüfung einer Entfernung angefragt werden. Ziel ist eine saubere, aktuelle und faire Darstellung aller gelisteten Profile.`,
   },
   {
     question: 'Können Unternehmen zusätzliche Informationen einreichen?',

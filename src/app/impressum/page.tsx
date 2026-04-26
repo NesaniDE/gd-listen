@@ -1,4 +1,5 @@
 import PageHero from '@/components/layout/PageHero'
+import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
 
 export const metadata = createPageMetadata({
@@ -24,7 +25,7 @@ const sections = [
   },
   {
     title: 'Kontakt',
-    content: ['E-Mail: info@nesani.de', 'Web: https://www.nesani.de'],
+    content: [`E-Mail: ${siteConfig.publisher.email}`, 'Web: https://www.nesani.de'],
   },
   {
     title: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
@@ -35,7 +36,7 @@ const sections = [
     content: [
       'Die auf GD Listen veröffentlichten Listen, Reihenfolgen und Unternehmensbeschreibungen stellen redaktionelle Einschätzungen dar.',
       'Sie erheben keinen Anspruch auf Vollständigkeit, Gleichbehandlung oder auf eine objektiv richtige Rangfolge.',
-      'Korrekturen, Ergänzungen oder die Prüfung einer Entfernung können per E-Mail an info@nesani.de angefragt werden.',
+      `Korrekturen, Ergänzungen oder die Prüfung einer Entfernung können per E-Mail an ${siteConfig.publisher.email} angefragt werden.`,
     ],
   },
   {

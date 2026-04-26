@@ -2,6 +2,8 @@ import PageHero from '@/components/layout/PageHero'
 import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
 
+const contactEmail = siteConfig.publisher.email
+
 export const metadata = createPageMetadata({
   title: 'Kontakt',
   description:
@@ -12,7 +14,7 @@ export const metadata = createPageMetadata({
 
 const contactItems = [
   { label: 'Betreiber', value: 'Nesani UG (haftungsbeschränkt) i.G.', href: 'https://www.nesani.de' },
-  { label: 'E-Mail', value: 'info@nesani.de', href: 'mailto:info@nesani.de' },
+  { label: 'E-Mail', value: contactEmail, href: `mailto:${contactEmail}` },
   { label: 'Standort', value: 'Schwäbisch Gmünd, Baden-Württemberg' },
   { label: 'Adresse', value: 'Basilikumweg 8, 73527 Schwäbisch Gmünd' },
 ]
@@ -32,7 +34,7 @@ const reasons = [
   },
   {
     title: 'Presse & Kooperation',
-    desc: 'Anfragen rund um GD Listen oder den Betreiber Nesani gehen ebenfalls an info@nesani.de.',
+    desc: `Anfragen rund um GD Listen oder den Betreiber Nesani gehen ebenfalls an ${contactEmail}.`,
   },
 ]
 
@@ -106,7 +108,7 @@ export default function KontaktPage() {
             </div>
 
             <a
-              href="mailto:info@nesani.de"
+              href={`mailto:${contactEmail}`}
               className="btn-primary"
               style={{ marginTop: '1.75rem', width: '100%', justifyContent: 'center' }}
             >

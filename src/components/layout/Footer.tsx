@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
             <p style={{ color: 'var(--text-subtle)', fontSize: '0.8rem', lineHeight: 1.65, maxWidth: '360px', marginTop: '0.875rem' }}>
               Listen und Reihenfolgen spiegeln unsere redaktionelle Einschätzung wider. Korrekturen oder eine
-              Überprüfung auf Entfernung sind per E-Mail an info@nesani.de möglich.
+              Überprüfung auf Entfernung sind per E-Mail an {siteConfig.publisher.email} möglich.
             </p>
           </div>
 

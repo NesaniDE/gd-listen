@@ -65,7 +65,7 @@ const faqItems = [
   {
     question: 'Kann ich eine Korrektur oder Entfernung meines Unternehmens anfragen?',
     answer:
-      'Ja. Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Bitte um Prüfung einer Entfernung können jederzeit an info@nesani.de gesendet werden.',
+      `Ja. Hinweise zu fehlerhaften Angaben, Ergänzungen oder die Bitte um Prüfung einer Entfernung können jederzeit an ${siteConfig.publisher.email} gesendet werden.`,
   },
   {
     question: 'Ist GD Listen nur für Schwäbisch Gmünd?',
