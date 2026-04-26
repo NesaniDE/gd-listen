@@ -40,9 +40,14 @@ const sections = [
       'Unternehmenslogos werden aktuell aus öffentlich erreichbaren Favicon-Quellen abgeleitet und über die Website ausgeliefert. Außerdem enthält GD Listen externe Links zu Websites Dritter. Beim bewussten Anklicken solcher Links gelten die Datenschutzbestimmungen der jeweiligen Anbieter.',
   },
   {
-    title: 'Analyse, Tracking und Werbung',
+    title: 'Reichweitenmessung mit Vercel Analytics & Speed Insights',
     text:
-      'Nach dem aktuellen Stand der Website werden keine optionalen Tracking-, Analyse- oder Marketing-Dienste eingebunden. Falls sich das technisch ändert, muss diese Datenschutzerklärung vor dem Einsatz solcher Dienste entsprechend angepasst werden.',
+      'Diese Website nutzt Vercel Analytics und Vercel Speed Insights (Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA) zur anonymen Reichweitenmessung und zur Messung technischer Performance-Kennzahlen wie Core Web Vitals. Beide Dienste arbeiten cookielos und ohne persistente IDs: Es werden keine personenbezogenen Daten in einem klassischen Tracking-Profil gespeichert, IP-Adressen werden nur kurzzeitig zur Sitzungs-Hash-Bildung verwendet und nicht dauerhaft gespeichert. Erfasst werden Seitenaufrufe, Referrer, Geräte- und Browser-Kategorien sowie technische Performance-Werte. Rechtsgrundlage ist unser berechtigtes Interesse an einer technisch zuverlässigen, schnellen und anonym nachvollziehbaren Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: https://vercel.com/docs/analytics und https://vercel.com/legal/privacy-policy.',
+  },
+  {
+    title: 'Sonstige Analyse- und Marketing-Dienste',
+    text:
+      'Über die genannte Reichweitenmessung hinaus werden auf dieser Website keine weiteren optionalen Tracking-, Analyse- oder Marketing-Dienste eingebunden. Falls sich das technisch ändert, wird diese Datenschutzerklärung vor dem Einsatz entsprechend angepasst.',
   },
   {
     title: 'Deine Rechte',
