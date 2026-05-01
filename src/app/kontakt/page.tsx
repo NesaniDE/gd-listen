@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 })
 
 const contactItems = [
-  { label: 'Betreiber', value: 'Nesani UG (haftungsbeschränkt) i.G.', href: 'https://www.nesani.de' },
+  { label: 'Betreiber', value: 'Nesani UG (haftungsbeschränkt)', href: 'https://www.nesani.de' },
   { label: 'E-Mail', value: contactEmail, href: `mailto:${contactEmail}` },
   { label: 'Standort', value: 'Schwäbisch Gmünd, Baden-Württemberg' },
 ]

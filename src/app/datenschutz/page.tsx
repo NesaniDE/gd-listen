@@ -13,7 +13,7 @@ const sections = [
   {
     title: 'Verantwortliche Stelle',
     text:
-      `Verantwortlich für diese Website ist die Nesani UG (haftungsbeschränkt) i.G., Basilikumweg 8, 73527 Schwäbisch Gmünd, E-Mail: ${siteConfig.publisher.email}. Diese Hinweise bilden den aktuellen technischen Stand der Website vom 25. April 2026 ab.`,
+      `Verantwortlich für diese Website ist die Nesani UG (haftungsbeschränkt), Basilikumweg 8, 73527 Schwäbisch Gmünd, E-Mail: ${siteConfig.publisher.email}. Diese Hinweise bilden den aktuellen technischen Stand der Website vom 25. April 2026 ab.`,
   },
   {
     title: 'Hosting und Server-Logfiles',

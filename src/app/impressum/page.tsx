@@ -4,7 +4,7 @@ import { createPageMetadata } from '@/lib/metadata'
 
 export const metadata = createPageMetadata({
   title: 'Impressum',
-  description: 'Impressum und rechtliche Pflichtangaben für GD Listen — betrieben von der Nesani UG (haftungsbeschränkt) i.G. aus Schwäbisch Gmünd, Baden-Württemberg.',
+  description: 'Impressum und rechtliche Pflichtangaben für GD Listen — betrieben von der Nesani UG (haftungsbeschränkt), HRB 751868, aus Schwäbisch Gmünd.',
   path: '/impressum',
   robots: { index: true, follow: true },
 })
@@ -13,10 +13,18 @@ const sections = [
   {
     title: 'Angaben gemäß § 5 TMG',
     content: [
-      'Nesani UG (haftungsbeschränkt) i.G.',
+      'Nesani UG (haftungsbeschränkt)',
       'Basilikumweg 8',
       '73527 Schwäbisch Gmünd',
       'Deutschland',
+    ],
+  },
+  {
+    title: 'Registereintrag',
+    content: [
+      'Eintragung im Handelsregister',
+      'Registergericht: Amtsgericht Ulm',
+      'Registernummer: HRB 751868',
     ],
   },
   {
