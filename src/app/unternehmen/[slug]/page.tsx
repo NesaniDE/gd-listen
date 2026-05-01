@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!company) return {}
 
   const category = getCategoryBySlug(company.category)
-  const description = `${company.name} in ${siteConfig.city}: ${(company.longDescription || company.description).slice(0, 135)}${category ? ` Mehr Kontext zu ${category.label} auf GD Listen.` : ''}`
+  const prefix = `${company.name} in ${siteConfig.city}: `
+  const description = `${prefix}${(company.longDescription || company.description).slice(0, 155 - prefix.length)}`
 
   return createPageMetadata({
     title: `${company.name} — ${siteConfig.city}`,

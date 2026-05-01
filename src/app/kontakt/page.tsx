@@ -7,7 +7,7 @@ const contactEmail = siteConfig.publisher.email
 export const metadata = createPageMetadata({
   title: 'Kontakt',
   description:
-    'GD Listen ist eine redaktionelle Wissensbank für Schwäbisch Gmünd. Kontakt zu Korrekturen, Entfernungsanfragen, Hinweisen und Eintragsanfragen über die Nesani UG.',
+    'GD Listen ist redaktionelle Wissensbank für Schwäbisch Gmünd. Korrekturen, Entfernungsanfragen, Hinweise und Eintragsanfragen bitte über die Nesani UG.',
   path: '/kontakt',
   keywords: ['Kontakt', siteConfig.city, ...siteConfig.keywords],
 })

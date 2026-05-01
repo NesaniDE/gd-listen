@@ -9,7 +9,7 @@ import { collectionPageJsonLd } from '@/lib/jsonld'
 export const metadata = createPageMetadata({
   title: 'Alle Top-10 Listen',
   description:
-    'Übersicht redaktioneller Top-10-Listen für Schwäbisch Gmünd — Einordnungen zu Restaurants, Cafés, Fitnessstudios, Friseuren, Zahnärzten und mehr.',
+    'Übersicht aller redaktionellen Top-10-Listen für Schwäbisch Gmünd — Restaurants, Cafés, Fitnessstudios, Friseure, Zahnärzte und weitere lokale Themen.',
   path: '/top10',
   keywords: ['Top 10', siteConfig.city, ...siteConfig.keywords],
 })

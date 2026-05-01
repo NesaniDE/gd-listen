@@ -15,7 +15,7 @@ import { getPublishedSubcategories, getPublishedSubcategoryCount } from '@/lib/s
 export const metadata = createPageMetadata({
   title: `Top-10 Listen & lokale Empfehlungen in ${siteConfig.city}`,
   description:
-    'GD Listen bündelt redaktionelle Top-10-Listen, Unternehmensprofile und lokale Ratgeber für Schwäbisch Gmünd. Entdecke Restaurants, Cafés, Handwerk, Dienstleister und mehr.',
+    'GD Listen bündelt redaktionelle Top-10-Listen und Unternehmensprofile für Schwäbisch Gmünd. Entdecke Restaurants, Cafés, Handwerk, Dienstleister und mehr.',
   path: '/',
   keywords: ['GD Listen', siteConfig.city, 'Top-10 Listen', 'lokale Empfehlungen', ...siteConfig.keywords],
 })

@@ -10,7 +10,7 @@ import { createPageMetadata } from '@/lib/metadata'
 export const metadata = createPageMetadata({
   title: 'Über GD Listen',
   description:
-    'GD Listen ist eine redaktionelle lokale Listen-Plattform nur für Schwäbisch Gmünd, betrieben von der Nesani UG.',
+    'GD Listen ist eine redaktionelle Listen-Plattform exklusiv für Schwäbisch Gmünd — betrieben von der Nesani UG mit dem Ziel klarer lokaler Orientierung.',
   path: '/ueber-gd-listen',
   keywords: ['Über GD Listen', siteConfig.city, ...siteConfig.keywords],
 })

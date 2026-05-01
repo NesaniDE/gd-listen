@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!category) return {}
 
   const publishedSubcategories = getPublishedSubcategories(category)
-  const description = `${category.description} ${publishedSubcategories.length} veröffentlichte Themenfelder, lokale Unternehmensprofile und redaktionelle Top-10-Listen für ${siteConfig.city}.`
+  const description = `${category.description} Redaktionell kuratierte Unternehmensprofile, Top-10-Listen und Themenfelder für ${siteConfig.city}.`
 
   return createPageMetadata({
     title: `${category.label} in ${siteConfig.city}`,

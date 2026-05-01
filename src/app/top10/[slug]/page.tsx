@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const category = getCategoryBySlug(list.categorySlug)
   const description =
     list.seoIntro ||
-    `${list.title} in ${siteConfig.city}: redaktionelle Orientierung mit lokalem Kontext, passenden Unternehmensprofilen und klarer thematischer Einordnung.`
+    `${list.title}: Redaktionelle Orientierung mit Unternehmensprofilen, Bewertungen und thematischem Kontext für ${siteConfig.city}.`
 
   return createPageMetadata({
     title: list.title,

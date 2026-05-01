@@ -6,7 +6,7 @@ import { createPageMetadata } from '@/lib/metadata'
 export const metadata = createPageMetadata({
   title: 'Methodik',
   description:
-    'Wie GD Listen redaktionelle Top-10-Listen für Schwäbisch Gmünd einordnet — Bewertungskriterien, Prozess und transparente Hinweise ohne Anspruch auf objektive Vollständigkeit.',
+    'Wie GD Listen redaktionelle Top-10-Listen für Schwäbisch Gmünd einordnet — Kriterien, Prozess und transparente Hinweise ohne Anspruch auf Vollständigkeit.',
   path: '/methodik',
   keywords: ['Methodik', siteConfig.city, ...siteConfig.keywords],
 })

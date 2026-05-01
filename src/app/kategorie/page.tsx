@@ -8,7 +8,7 @@ import { collectionPageJsonLd } from '@/lib/jsonld'
 export const metadata = createPageMetadata({
   title: 'Kategorien',
   description:
-    'Alle Kategorien von GD Listen — von Gastro über Freizeit, Dienstleister, Beauty, Gesundheit, Handwerk bis Shopping in Schwäbisch Gmünd.',
+    'Alle Kategorien von GD Listen — Gastro, Freizeit, Beauty, Gesundheit, Handwerk, Dienstleister und mehr. Redaktionell eingeordnet für Schwäbisch Gmünd.',
   path: '/kategorie',
   keywords: ['Kategorien', siteConfig.city, ...siteConfig.keywords],
 })

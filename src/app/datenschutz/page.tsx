@@ -4,7 +4,7 @@ import { createPageMetadata } from '@/lib/metadata'
 
 export const metadata = createPageMetadata({
   title: 'Datenschutzerklärung',
-  description: 'Datenschutzerklärung von GD Listen — Hinweise zur Datenverarbeitung und deinen Rechten gemäß DSGVO.',
+  description: 'Datenschutzerklärung für GD Listen — transparente Informationen zur Datenverarbeitung, zu eingesetzten Diensten und zu deinen Rechten nach DSGVO und BDSG.',
   path: '/datenschutz',
   robots: { index: true, follow: true },
 })

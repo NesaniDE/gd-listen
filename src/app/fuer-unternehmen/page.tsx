@@ -7,7 +7,7 @@ import { createPageMetadata } from '@/lib/metadata'
 export const metadata = createPageMetadata({
   title: 'Für Unternehmen',
   description:
-    'Werde Teil von GD Listen — lokale Sichtbarkeit in Schwäbisch Gmünd statt anonymem Massenlisting. Pakete, Ablauf und FAQ.',
+    'Werde Teil von GD Listen — redaktionelle Sichtbarkeit für lokale Unternehmen in Schwäbisch Gmünd. Informationen zu Paketen, Ablauf und häufigen Fragen.',
   path: '/fuer-unternehmen',
   keywords: ['Für Unternehmen', siteConfig.city, ...siteConfig.keywords],
 })

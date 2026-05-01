@@ -8,7 +8,7 @@ import { collectionPageJsonLd } from '@/lib/jsonld'
 export const metadata = createPageMetadata({
   title: 'Blog & Ratgeber',
   description:
-    'Tipps, Hintergründe und Empfehlungen rund um Schwäbisch Gmünd — vom passenden Café bis zur richtigen Zahnarztpraxis.',
+    'Tipps, Hintergründe und lokale Empfehlungen für Schwäbisch Gmünd — redaktionell eingeordnet für Gastro, Gesundheit, Freizeit, Handel und Dienstleister.',
   path: '/blog',
   keywords: ['Blog', 'Ratgeber', siteConfig.city, ...siteConfig.keywords],
 })
