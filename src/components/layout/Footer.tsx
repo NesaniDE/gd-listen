@@ -47,8 +47,19 @@ export default function Footer() {
               Redaktionelle Top-10-Listen für {siteConfig.city}. Lokal. Kuratiert. Ohne Branchenbuch-Ballast.
             </p>
             <p style={{ color: 'var(--text-subtle)', fontSize: '0.8rem', lineHeight: 1.65, maxWidth: '360px', marginTop: '0.875rem' }}>
-              Listen und Reihenfolgen spiegeln unsere redaktionelle Einschätzung wider. Korrekturen oder eine
-              Überprüfung auf Entfernung sind per E-Mail an {siteConfig.publisher.email} möglich.
+              Ein Projekt der{' '}
+              <a
+                href="https://www.nesani.de"
+                target="_blank"
+                rel="noopener"
+                className="footer-link"
+              >
+                Nesani UG
+              </a>
+              {' '}— digitale Produkte aus {siteConfig.city}.
+            </p>
+            <p style={{ color: 'var(--text-subtle)', fontSize: '0.8rem', lineHeight: 1.65, maxWidth: '360px', marginTop: '0.5rem' }}>
+              Korrekturen oder Entfernungsanfragen per E-Mail an {siteConfig.publisher.email}.
             </p>
           </div>
 
@@ -72,15 +83,14 @@ export default function Footer() {
             © {new Date().getFullYear()} GD Listen — {siteConfig.city}
           </p>
           <p style={{ color: 'var(--text-subtle)', fontSize: '0.8rem' }}>
-            Built by{' '}
             <a
               href="https://www.nesani.de"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="footer-link"
               style={{ color: 'var(--text-muted)', fontWeight: 500 }}
             >
-              Nesani
+              Nesani UG — Web & digitale Produkte aus Schwäbisch Gmünd
             </a>
           </p>
         </div>

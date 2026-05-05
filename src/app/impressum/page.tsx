@@ -6,7 +6,6 @@ export const metadata = createPageMetadata({
   title: 'Impressum',
   description: 'Impressum und rechtliche Pflichtangaben für GD Listen — betrieben von der Nesani UG (haftungsbeschränkt), HRB 751868, aus Schwäbisch Gmünd.',
   path: '/impressum',
-  robots: { index: true, follow: true },
 })
 
 const sections = [
