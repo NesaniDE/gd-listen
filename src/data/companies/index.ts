@@ -3775,6 +3775,20 @@ export const companies: Company[] = [
     services: ["Dacharbeiten", "Sanierung", "Wartung"],
     featured: false,
   },
+  {
+    slug: "urim-h-handwerk",
+    name: "URIM H.",
+    category: "handwerk",
+    subcategory: "rund-ums-haus",
+    description: "Vielseitiger Handwerker und Dienstleister in Schwäbisch Gmünd — Trockenbau, Hausmeisterservice, Montage, Bodenverlegung, Reinigung und Entrümpelung aus einer Hand.",
+    longDescription: "URIM H. bietet vielseitige Handwerks- und Dienstleistungen für private Haushalte und gewerbliche Objekte in Schwäbisch Gmünd. Das Spektrum reicht von Trockenbau und Innenausbau über Montagearbeiten und Bodenverlegung bis hin zu Gebäudereinigung, Hausmeisterservice und Entrümpelung. Besondere Stärke liegt in der persönlichen Betreuung durch Inhaber Urim Hasani — ein direkter Ansprechpartner für unterschiedliche Aufgaben rund um Haus und Objekt. Pünktlichkeit, saubere Ausführung und klare Kommunikation stehen im Mittelpunkt jedes Auftrags.",
+    address: "Am Wäldle 10, 73527 Schwäbisch Gmünd",
+    phone: "0172 938 2022",
+    website: "https://www.handwerk-urim.de",
+    tags: ["Trockenbau", "Hausmeister", "Reinigung", "Montage", "Entrümpelung"],
+    services: ["Trockenbau & Innenausbau", "Hausmeisterservice", "Montagearbeiten", "Bodenverlegung", "Gebäudereinigung", "Entrümpelung"],
+    featured: false,
+  },
 
 ];
 
