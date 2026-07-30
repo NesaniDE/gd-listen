@@ -58,6 +58,41 @@ export default function HomePage() {
   ]
 
   const searchExamples = top10Lists.slice(0, 8)
+  const searchItems = [
+    ...categories.flatMap((category) => {
+      const categoryEntry = {
+        title: category.label,
+        href: `/kategorie/${category.slug}`,
+        type: 'Kategorie' as const,
+        subtitle: category.description,
+        searchText: `${category.label} ${category.description} ${category.slug}`.toLowerCase(),
+      }
+
+      const subcategoryEntries = category.subcategories.map((subcategory) => ({
+        title: subcategory.label,
+        href: `/top10/${subcategory.listSlug}`,
+        type: 'Liste' as const,
+        subtitle: `${category.label} · ${subcategory.label}`,
+        searchText: `${subcategory.label} ${subcategory.slug} ${category.label} ${subcategory.listSlug}`.toLowerCase(),
+      }))
+
+      return [categoryEntry, ...subcategoryEntries]
+    }),
+    ...top10Lists.map((list) => ({
+      title: list.title,
+      href: `/top10/${list.slug}`,
+      type: 'Liste' as const,
+      subtitle: 'Top-10 Liste',
+      searchText: `${list.title} ${list.slug} ${list.intro}`.toLowerCase(),
+    })),
+    ...companies.map((company) => ({
+      title: company.name,
+      href: `/unternehmen/${company.slug}`,
+      type: 'Unternehmen' as const,
+      subtitle: company.description,
+      searchText: `${company.name} ${company.slug} ${company.description} ${company.tags.join(' ')} ${company.services?.join(' ') || ''}`.toLowerCase(),
+    })),
+  ]
 
   const principles = [
     {
@@ -125,7 +160,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <SearchPlaceholder />
+            <SearchPlaceholder items={searchItems} />
           </div>
 
           <div
