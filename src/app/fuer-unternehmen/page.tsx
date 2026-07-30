@@ -16,31 +16,31 @@ const packages = [
   {
     name: 'Basic',
     price: 'Kostenlos',
-    description: 'Ein erster Eintrag mit Basisdaten, wenn dein Unternehmen redaktionell aufgenommen wird.',
-    features: ['Basis-Profil', 'Nennung in Listen', 'Lokale Sichtbarkeit'],
+    description: 'Ein einfacher Unternehmenseintrag, wenn dein Betrieb redaktionell passend aufgenommen wird.',
+    features: ['Basis-Profil', 'Nennung in passenden Listen', 'Lokale Sichtbarkeit ohne Anzeigenplatz'],
     highlighted: false,
   },
   {
     name: 'Premium',
     price: 'Auf Anfrage',
-    description: 'Mehr Profil-Tiefe, bessere Darstellung und mehr Kontrolle über die präsentierten Informationen.',
+    description: 'Eine sichtbare Anzeige in einer Kategorie oder Liste deiner Wahl.',
     features: [
-      'Erweitertes Profil',
-      'Längere Beschreibung',
-      'Leistungen & Schwerpunkte',
-      'Spätere Bildintegration',
+      'Anzeige oberhalb einer passenden Kategorie oder Liste',
+      'Kennzeichnung als Anzeige',
+      'Verlinkung auf dein Unternehmensprofil',
+      'Kategorie nach Absprache wählbar',
     ],
     highlighted: true,
   },
   {
     name: 'Business',
     price: 'Auf Anfrage',
-    description: 'Für Unternehmen, die GD Listen als starken lokalen Sichtbarkeitskanal nutzen wollen.',
+    description: 'Für Unternehmen, die in mehreren Kategorien oder Listen sichtbar sein möchten.',
     features: [
-      'Alles aus Premium',
-      'Featured-Darstellung',
-      'Mehr Kontext im Profil',
-      'Individuelle Abstimmung',
+      'Mehrere Anzeigenplätze nach Bedarf',
+      'Kategorien und Listen frei abstimmbar',
+      'Geeignet für Kampagnen oder laufende Sichtbarkeit',
+      'Individuelle Laufzeit und Platzierung',
     ],
     highlighted: false,
   },
@@ -159,7 +159,8 @@ export default function FuerUnternehmenPage() {
               maxWidth: '600px',
             }}
           >
-            Die Pakete sind als sinnvolle Struktur für später gedacht und können beim Livegang final festgelegt werden.
+            Die Pakete zeigen die geplanten Möglichkeiten: kostenloser Grundeintrag, einzelne Anzeige oder flexible
+            Sichtbarkeit in mehreren Kategorien und Listen.
           </p>
           <div
             style={{
