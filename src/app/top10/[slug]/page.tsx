@@ -90,9 +90,62 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
       </PageHero>
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <section style={{ marginBottom: '2rem', maxWidth: '820px' }}>
+          <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
+            Worum es hier geht
+          </span>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.75 }}>{seoBlocks.intro}</p>
+        </section>
+
+        {list.sponsoredEntry && (
+          <section style={{ marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                marginBottom: '0.75rem',
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: '1rem',
+                flexWrap: 'wrap',
+              }}
+            >
+              <span className="eyebrow">Empfohlene Anzeige</span>
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: 'var(--text-subtle)',
+                }}
+              >
+                Sponsored
+              </span>
+            </div>
+            <RankingCard entry={list.sponsoredEntry} listSlug={list.slug} isSponsored />
+          </section>
+        )}
+
+        <ol
+          className="stagger-children"
+          style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.75rem',
+            marginBottom: '4rem',
+          }}
+        >
+          {list.entries.map((entry) => (
+            <li key={entry.rank}>
+              <RankingCard entry={entry} listSlug={list.slug} />
+            </li>
+          ))}
+        </ol>
+
         <section
           style={{
-            marginBottom: '1.5rem',
+            marginBottom: '4rem',
             padding: '1.25rem 1.375rem',
             borderRadius: '12px',
             border: '1px solid rgba(232, 185, 72, 0.22)',
@@ -117,32 +170,6 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
             anfragen.
           </p>
         </section>
-
-        <section style={{ marginBottom: '2rem', maxWidth: '820px' }}>
-          <span className="eyebrow" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
-            Worum es hier geht
-          </span>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.75 }}>{seoBlocks.intro}</p>
-        </section>
-
-        <ol
-          className="stagger-children"
-          style={{
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.75rem',
-            marginBottom: '4rem',
-          }}
-        >
-          {list.entries.map((entry) => (
-            <li key={entry.rank}>
-              <RankingCard entry={entry} listSlug={list.slug} />
-            </li>
-          ))}
-        </ol>
 
         <section style={{ marginBottom: '4rem' }}>
           <div

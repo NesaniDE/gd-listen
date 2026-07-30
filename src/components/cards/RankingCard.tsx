@@ -2,7 +2,14 @@ import Link from 'next/link'
 import { RankingEntry } from '@/data/lists'
 import CompanyLogo from '@/components/ui/CompanyLogo'
 
-export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?: string }) {
+export default function RankingCard({
+  entry,
+  isSponsored = false,
+}: {
+  entry: RankingEntry
+  listSlug?: string
+  isSponsored?: boolean
+}) {
   return (
     <Link
       href={`/unternehmen/${entry.slug}`}
@@ -22,19 +29,40 @@ export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?:
         <div
           style={{
             display: 'flex',
-            alignItems: 'baseline',
+            alignItems: 'center',
             justifyContent: 'flex-start',
           }}
         >
-          <span
-            className="rank-number"
-            style={{
-              fontSize: entry.rank === 1 ? '2.5rem' : '2rem',
-              color: entry.rank <= 3 ? 'var(--text)' : 'var(--text-subtle)',
-            }}
-          >
-            {entry.rank.toString().padStart(2, '0')}
-          </span>
+          {isSponsored ? (
+            <div
+              aria-label="Anzeige"
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '999px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(232, 185, 72, 0.14)',
+                border: '1px solid rgba(232, 185, 72, 0.3)',
+                color: 'var(--accent)',
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.5 18 4 7.5l5 3L12 4l3 6.5 5-3L17.5 18H6.5Zm.9-2h9.2l1.2-4.7-3.6 2.2L12 8.8l-2.2 4.7-3.6-2.2L7.4 16Z" />
+              </svg>
+            </div>
+          ) : (
+            <span
+              className="rank-number"
+              style={{
+                fontSize: entry.rank === 1 ? '2.5rem' : '2rem',
+                color: entry.rank <= 3 ? 'var(--text)' : 'var(--text-subtle)',
+              }}
+            >
+              {entry.rank.toString().padStart(2, '0')}
+            </span>
+          )}
         </div>
 
         <CompanyLogo
@@ -61,6 +89,23 @@ export default function RankingCard({ entry }: { entry: RankingEntry; listSlug?:
           >
             {entry.name}
           </h3>
+          {isSponsored && (
+            <div style={{ marginBottom: '0.35rem' }}>
+              <span
+                style={{
+                  fontSize: '0.68rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--text-subtle)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '999px',
+                  padding: '0.18rem 0.45rem',
+                }}
+              >
+                Anzeige
+              </span>
+            </div>
+          )}
           <p
             style={{
               color: 'var(--text-muted)',

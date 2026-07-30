@@ -1890,6 +1890,20 @@ export const companies: Company[] = [
     services: ["Studiofotografie", "Familien", "Hochzeiten", "Bewerbungsfotos"],
     featured: false,
   },
+  {
+    slug: "marc-schiele",
+    name: "Marc Schiele",
+    category: "dienstleister",
+    subcategory: "fotografen",
+    description: "Foto-, Video- und Social-Media-Produktion aus Durlangen für Marken, Events und Hochzeiten.",
+    longDescription: "Marc Schiele verbindet Fotografie, Videografie und Social-Media-nahe Content-Produktion in einem klar kommerziellen und zugleich eventtauglichen Profil. Für GD Listen ist das besonders interessant, weil Business, Content, Events und Hochzeiten hier aus einer Hand gedacht werden und regional auf Schwäbisch Gmünd ausgerichtet sind.",
+    address: "73568 Durlangen",
+    phone: "",
+    website: "https://marcschiele.de/",
+    tags: ["Fotograf", "Videograf", "Social Media"],
+    services: ["Businessfotografie", "Videografie", "Content-Produktion", "Hochzeitsfotografie"],
+    featured: false,
+  },
 
   {
     slug: "compass-gebaeudemanagement",
