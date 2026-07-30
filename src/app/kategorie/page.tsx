@@ -1,6 +1,7 @@
 import { categories } from '@/data/categories'
 import CategoryCard from '@/components/cards/CategoryCard'
 import PageHero from '@/components/layout/PageHero'
+import AdSpotTeaser from '@/components/sections/AdSpotTeaser'
 import { siteConfig } from '@/lib/config'
 import { createPageMetadata } from '@/lib/metadata'
 import { collectionPageJsonLd } from '@/lib/jsonld'
@@ -34,6 +35,7 @@ export default function KategoriePage() {
         subtitle="Von Gastro bis Handwerk — entdecke lokale Anbieter in Schwäbisch Gmünd, redaktionell eingeordnet in thematischen Listen."
       />
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <AdSpotTeaser context="den Kategorien" />
         <section style={{ maxWidth: '820px', marginBottom: '2.5rem' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.75 }}>
             Die Kategorien auf GD Listen sind keine leeren Container, sondern die strukturelle Basis für lokale

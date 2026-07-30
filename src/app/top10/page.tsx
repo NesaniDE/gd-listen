@@ -1,5 +1,6 @@
 import PageHero from '@/components/layout/PageHero'
 import TopListCard from '@/components/cards/TopListCard'
+import AdSpotTeaser from '@/components/sections/AdSpotTeaser'
 import { categories } from '@/data/categories'
 import { top10Lists } from '@/data/lists'
 import { siteConfig } from '@/lib/config'
@@ -36,6 +37,7 @@ export default function Top10OverviewPage() {
       />
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <AdSpotTeaser context="den Top-10-Listen" />
         <section style={{ maxWidth: '860px', marginBottom: '2.5rem' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.75 }}>
             Diese Übersicht bündelt alle bereits veröffentlichten Rankings von GD Listen. Dadurch lassen sich Themen

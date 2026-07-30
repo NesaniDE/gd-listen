@@ -12,6 +12,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import TopListCard from '@/components/cards/TopListCard'
 import CompanyCard from '@/components/cards/CompanyCard'
 import FAQSection from '@/components/ui/FAQSection'
+import AdSpotTeaser from '@/components/sections/AdSpotTeaser'
 
 export async function generateStaticParams() {
   return categories.map((category) => ({ category: category.slug }))
@@ -95,6 +96,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
       </PageHero>
 
       <div className="section-container" style={{ paddingBottom: '6rem' }}>
+        <AdSpotTeaser context={`der Kategorie ${category.label}`} />
         <section style={{ marginBottom: '3rem' }}>
           <div
             style={{

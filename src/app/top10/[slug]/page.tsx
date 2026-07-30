@@ -14,6 +14,7 @@ import RelatedLists from '@/components/sections/RelatedLists'
 import CTASection from '@/components/sections/CTASection'
 import CompanyCard from '@/components/cards/CompanyCard'
 import FAQSection from '@/components/ui/FAQSection'
+import AdSpotTeaser from '@/components/sections/AdSpotTeaser'
 
 export async function generateStaticParams() {
   return top10Lists.map((list) => ({ slug: list.slug }))
@@ -97,7 +98,7 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
           <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.75 }}>{seoBlocks.intro}</p>
         </section>
 
-        {list.sponsoredEntry && (
+        {list.sponsoredEntry ? (
           <section style={{ marginBottom: '1.5rem' }}>
             <div
               style={{
@@ -122,6 +123,8 @@ export default function Top10ListPage({ params }: { params: { slug: string } }) 
             </div>
             <RankingCard entry={list.sponsoredEntry} listSlug={list.slug} isSponsored />
           </section>
+        ) : (
+          <AdSpotTeaser context={`der Liste ${list.title}`} compact />
         )}
 
         <ol
