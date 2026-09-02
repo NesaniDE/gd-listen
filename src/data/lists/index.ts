@@ -52,6 +52,27 @@ function buildSponsoredEntry(slug: string): RankingEntry {
 
 export const top10Lists: Top10List[] = [
   {
+    slug: "top-10-social-media-agenturen-in-schwaebisch-gmuend",
+    title: "Top 10 Social-Media-Agenturen in Schwäbisch Gmünd",
+    categorySlug: "dienstleister",
+    subcategorySlug: "social-media",
+    updatedAt: "2026-09",
+    lastReviewedAt: "2026-09",
+    intro: "Diese Liste bündelt zehn Anbieter, die in Schwäbisch Gmünd Social Media für Unternehmen betreuen. Anders als die übrigen Listen beruht sie nicht auf Kartendaten, sondern auf einzeln geprüften Impressumsangaben und Leistungsseiten (Stand 09/2026) — Agenturen sind in offenen Kartendaten kaum erfasst. Aufgenommen wurden nur Anbieter, bei denen Social Media auf der eigenen Website als Leistung belegt ist; reine Werbe- oder Webagenturen ohne Social-Media-Angebot stehen nicht drin. Die Reihenfolge ist eine redaktionelle Einschätzung nach den Kriterien auf unserer Methodik-Seite. Kundenbewertungen fließen nicht ein. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
+    entries: [
+      buildEntry(1, "nesani"),
+      buildEntry(2, "eberle-werbeagentur"),
+      buildEntry(3, "carina-kerler"),
+      buildEntry(4, "wnxe"),
+      buildEntry(5, "zoodesign"),
+      buildEntry(6, "achtender"),
+      buildEntry(7, "seo-triebwerk"),
+      buildEntry(8, "ihlenfeldt-online-marketing"),
+      buildEntry(9, "freitag-und-haeussermann"),
+      buildEntry(10, "vid-design"),
+    ],
+  },
+  {
     slug: "top-10-restaurants-in-schwaebisch-gmuend",
     title: "Top 10 Restaurants in Schwäbisch Gmünd",
     categorySlug: "gastro",
@@ -383,7 +404,6 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "werbeagenturen",
     updatedAt: "2026-04",
-    sponsoredEntry: buildSponsoredEntry("nesani"),
     intro: "Wer in Schwäbisch Gmünd Marketing, Branding oder digitale Kommunikation sucht, findet überraschend viele unterschiedliche Agenturprofile. Diese Liste zeigt zehn Agenturen, die vom klassischen Design bis zu digitalen Kampagnen und Außenwerbung reichen.",
     entries: [
       buildEntry(1, "nesani"),
@@ -404,7 +424,6 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "it-dienstleister",
     updatedAt: "2026-04",
-    sponsoredEntry: buildSponsoredEntry("nesani"),
     intro: "Vom Systemhaus über den klassischen PC-Service bis zum spezialisierten KMU-Betreuer: Diese Liste bündelt zehn IT-Dienstleister aus Schwäbisch Gmünd, die je nach Bedarf sehr unterschiedliche Schwerpunkte setzen.",
     entries: [
       buildEntry(1, "nesani"),
@@ -445,7 +464,6 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "webagenturen",
     updatedAt: "2026-04",
-    sponsoredEntry: buildSponsoredEntry("nesani"),
     intro: "Zwischen klassischem Webdesign, UX, WordPress, technischer Umsetzung und digitaler Markenarbeit gibt es in Schwäbisch Gmünd mehr Webkompetenz, als man zunächst erwartet. Diese Liste bündelt zehn lokale und lokal sichtbare Agenturadressen mit starkem Digitalfokus.",
     entries: [
       buildEntry(1, "nesani"),
@@ -1390,7 +1408,6 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "digitalisierungsberatung",
     updatedAt: "2026-04",
-    sponsoredEntry: buildSponsoredEntry("nesani"),
     intro: "Zwischen Strategie, Technik und Umsetzung braucht Digitalisierung oft Partner, die mehrere Ebenen gleichzeitig verstehen. Diese Liste bündelt zehn Adressen in Schwäbisch Gmünd, die dafür besonders anschlussfähig wirken.",
     entries: [
       buildEntry(1, "nesani"),

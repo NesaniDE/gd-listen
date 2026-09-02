@@ -1,3 +1,5 @@
+import { top10Lists } from '@/data/lists'
+
 export interface Category {
   slug: string
   label: string
@@ -12,7 +14,7 @@ export interface Subcategory {
   listSlug: string
 }
 
-export const categories: Category[] = [
+const rawCategories: Category[] = [
   {
     slug: 'gastro',
     label: 'Gastro',
@@ -62,6 +64,7 @@ export const categories: Category[] = [
       { slug: 'fotografen', label: 'Fotografen', listSlug: 'top-10-fotografen-in-schwaebisch-gmuend' },
       { slug: 'webagenturen', label: 'Webagenturen', listSlug: 'top-10-webagenturen-in-schwaebisch-gmuend' },
       { slug: 'werbeagenturen', label: 'Werbeagenturen', listSlug: 'top-10-werbeagenturen-in-schwaebisch-gmuend' },
+      { slug: 'social-media', label: 'Social-Media-Agenturen', listSlug: 'top-10-social-media-agenturen-in-schwaebisch-gmuend' },
       { slug: 'unternehmensberater', label: 'Unternehmensberater', listSlug: 'top-10-unternehmensberater-in-schwaebisch-gmuend' },
       { slug: 'it-dienstleister', label: 'IT-Dienstleister', listSlug: 'top-10-it-dienstleister-in-schwaebisch-gmuend' },
     ],
@@ -162,6 +165,20 @@ export const categories: Category[] = [
     ],
   },
 ]
+
+const listSlugs = new Set(top10Lists.map((list) => list.slug))
+
+/**
+ * Nur Subkategorien ausliefern, fuer die es tatsaechlich eine Liste gibt.
+ * Sonst verlinken Kategorieseiten auf Unterseiten, die es nicht gibt.
+ * Kategorien ohne verbleibende Subkategorie fallen ganz raus.
+ */
+export const categories: Category[] = rawCategories
+  .map((category) => ({
+    ...category,
+    subcategories: category.subcategories.filter((sub) => listSlugs.has(sub.listSlug)),
+  }))
+  .filter((category) => category.subcategories.length > 0)
 
 export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug)

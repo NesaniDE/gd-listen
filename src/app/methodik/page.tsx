@@ -45,6 +45,11 @@ const faqItems = [
       'Nein. Die Listen sind redaktionelle Einschätzungen von GD Listen und kein amtliches, vollständiges oder allgemeingültiges Ranking. Sie sollen die lokale Suche vereinfachen, nicht eine endgültige Wahrheit behaupten.',
   },
   {
+    question: 'Steht der Betreiber selbst in den Listen?',
+    answer:
+      'Ja. GD Listen wird von der NESANI UG (haftungsbeschränkt) aus Schwäbisch Gmünd betrieben, und NESANI ist in einzelnen Dienstleisterlisten selbst aufgeführt. Wir weisen das im Intro der betroffenen Listen und auf dem Unternehmensprofil aus, damit die Platzierung einordbar bleibt.',
+  },
+  {
     question: 'Kann ich Geld zahlen, um auf Platz 1 zu kommen?',
     answer:
       'Nein. Platzierungen sollen redaktionell nachvollziehbar bleiben. Sichtbarkeitspakete für Unternehmen dürfen die Reihenfolge nicht einfach kaufen.',
