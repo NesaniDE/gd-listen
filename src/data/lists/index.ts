@@ -407,7 +407,8 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "werbeagenturen",
     updatedAt: "2026-04",
-    intro: "Wer in Schwäbisch Gmünd Marketing, Branding oder digitale Kommunikation sucht, findet überraschend viele unterschiedliche Agenturprofile. Diese Liste zeigt zehn Agenturen, die vom klassischen Design bis zu digitalen Kampagnen und Außenwerbung reichen.",
+    featurePageHref: "/beste-werbeagentur-schwaebisch-gmuend",
+    intro: "Wer in Schwäbisch Gmünd Marketing, Branding oder digitale Kommunikation sucht, findet überraschend viele unterschiedliche Agenturprofile. Diese Liste zeigt zehn Agenturen, die vom klassischen Design bis zu digitalen Kampagnen und Außenwerbung reichen. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
       buildEntry(1, "nesani"),
       buildEntry(2, "achtender"),
@@ -427,7 +428,8 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "it-dienstleister",
     updatedAt: "2026-04",
-    intro: "Vom Systemhaus über den klassischen PC-Service bis zum spezialisierten KMU-Betreuer: Diese Liste bündelt zehn IT-Dienstleister aus Schwäbisch Gmünd, die je nach Bedarf sehr unterschiedliche Schwerpunkte setzen.",
+    featurePageHref: "/bester-it-dienstleister-schwaebisch-gmuend",
+    intro: "Vom Systemhaus über den klassischen PC-Service bis zum spezialisierten KMU-Betreuer: Diese Liste bündelt zehn IT-Dienstleister aus Schwäbisch Gmünd, die je nach Bedarf sehr unterschiedliche Schwerpunkte setzen. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
       buildEntry(1, "nesani"),
       buildEntry(2, "ls-it-services"),
@@ -467,7 +469,8 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "webagenturen",
     updatedAt: "2026-04",
-    intro: "Zwischen klassischem Webdesign, UX, WordPress, technischer Umsetzung und digitaler Markenarbeit gibt es in Schwäbisch Gmünd mehr Webkompetenz, als man zunächst erwartet. Diese Liste bündelt zehn lokale und lokal sichtbare Agenturadressen mit starkem Digitalfokus.",
+    featurePageHref: "/beste-webagentur-schwaebisch-gmuend",
+    intro: "Zwischen klassischem Webdesign, UX, WordPress, technischer Umsetzung und digitaler Markenarbeit gibt es in Schwäbisch Gmünd mehr Webkompetenz, als man zunächst erwartet. Diese Liste bündelt zehn lokale und lokal sichtbare Agenturadressen mit starkem Digitalfokus. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
       buildEntry(1, "nesani"),
       buildEntry(2, "achtender"),
@@ -1411,7 +1414,8 @@ export const top10Lists: Top10List[] = [
     categorySlug: "dienstleister",
     subcategorySlug: "digitalisierungsberatung",
     updatedAt: "2026-04",
-    intro: "Zwischen Strategie, Technik und Umsetzung braucht Digitalisierung oft Partner, die mehrere Ebenen gleichzeitig verstehen. Diese Liste bündelt zehn Adressen in Schwäbisch Gmünd, die dafür besonders anschlussfähig wirken.",
+    featurePageHref: "/beste-digitalisierungsberatung-schwaebisch-gmuend",
+    intro: "Zwischen Strategie, Technik und Umsetzung braucht Digitalisierung oft Partner, die mehrere Ebenen gleichzeitig verstehen. Diese Liste bündelt zehn Adressen in Schwäbisch Gmünd, die dafür besonders anschlussfähig wirken. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
       buildEntry(1, "nesani"),
       buildEntry(2, "bollin-consulting"),
