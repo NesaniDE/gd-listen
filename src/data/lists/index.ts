@@ -23,6 +23,8 @@ export interface Top10List {
   faq?: FAQItem[]
   lastReviewedAt?: string
   sponsoredEntry?: RankingEntry
+  /** Verweis auf eine vertiefende Seite zum Platz-1-Eintrag, z. B. "Die beste X in Y". */
+  featurePageHref?: string
   entries: RankingEntry[]
 }
 
@@ -58,6 +60,7 @@ export const top10Lists: Top10List[] = [
     subcategorySlug: "social-media",
     updatedAt: "2026-09",
     lastReviewedAt: "2026-09",
+    featurePageHref: "/beste-social-media-agentur-schwaebisch-gmuend",
     intro: "Diese Liste bündelt zehn Anbieter, die in Schwäbisch Gmünd Social Media für Unternehmen betreuen. Anders als die übrigen Listen beruht sie nicht auf Kartendaten, sondern auf einzeln geprüften Impressumsangaben und Leistungsseiten (Stand 09/2026) — Agenturen sind in offenen Kartendaten kaum erfasst. Aufgenommen wurden nur Anbieter, bei denen Social Media auf der eigenen Website als Leistung belegt ist; reine Werbe- oder Webagenturen ohne Social-Media-Angebot stehen nicht drin. Die Reihenfolge ist eine redaktionelle Einschätzung nach den Kriterien auf unserer Methodik-Seite. Kundenbewertungen fließen nicht ein. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
       buildEntry(1, "nesani"),
