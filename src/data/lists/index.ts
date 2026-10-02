@@ -80,7 +80,7 @@ export const top10Lists: Top10List[] = [
     title: "Top 10 Restaurants in Schwäbisch Gmünd",
     categorySlug: "gastro",
     subcategorySlug: "restaurants",
-    updatedAt: "2026-04",
+    updatedAt: "2026-09-02",
     intro: "Von gehobener Küche bis zu internationalen Konzepten: Diese erste GD-Listen-Auswahl bündelt zehn Restaurantadressen in Schwäbisch Gmünd, die für unterschiedliche Anlässe, Geschmäcker und Budgets interessant sind. Die Reihenfolge ist redaktionell gesetzt und soll vor allem Orientierung geben — nicht den einzigen Maßstab liefern.",
     entries: [
       buildEntry(1, "restaurant-krietsch"),
@@ -406,7 +406,7 @@ export const top10Lists: Top10List[] = [
     title: "Top 10 Werbeagenturen in Schwäbisch Gmünd",
     categorySlug: "dienstleister",
     subcategorySlug: "werbeagenturen",
-    updatedAt: "2026-04",
+    updatedAt: "2026-09-15",
     featurePageHref: "/beste-werbeagentur-schwaebisch-gmuend",
     intro: "Wer in Schwäbisch Gmünd Marketing, Branding oder digitale Kommunikation sucht, findet überraschend viele unterschiedliche Agenturprofile. Diese Liste zeigt zehn Agenturen, die vom klassischen Design bis zu digitalen Kampagnen und Außenwerbung reichen. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
@@ -427,7 +427,7 @@ export const top10Lists: Top10List[] = [
     title: "Top 10 IT-Dienstleister in Schwäbisch Gmünd",
     categorySlug: "dienstleister",
     subcategorySlug: "it-dienstleister",
-    updatedAt: "2026-04",
+    updatedAt: "2026-09-15",
     featurePageHref: "/bester-it-dienstleister-schwaebisch-gmuend",
     intro: "Vom Systemhaus über den klassischen PC-Service bis zum spezialisierten KMU-Betreuer: Diese Liste bündelt zehn IT-Dienstleister aus Schwäbisch Gmünd, die je nach Bedarf sehr unterschiedliche Schwerpunkte setzen. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
@@ -468,7 +468,7 @@ export const top10Lists: Top10List[] = [
     title: "Top 10 Webagenturen in Schwäbisch Gmünd",
     categorySlug: "dienstleister",
     subcategorySlug: "webagenturen",
-    updatedAt: "2026-04",
+    updatedAt: "2026-09-15",
     featurePageHref: "/beste-webagentur-schwaebisch-gmuend",
     intro: "Zwischen klassischem Webdesign, UX, WordPress, technischer Umsetzung und digitaler Markenarbeit gibt es in Schwäbisch Gmünd mehr Webkompetenz, als man zunächst erwartet. Diese Liste bündelt zehn lokale und lokal sichtbare Agenturadressen mit starkem Digitalfokus. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
@@ -1413,7 +1413,7 @@ export const top10Lists: Top10List[] = [
     title: "Top 10 Digitalisierungsberatung in Schwäbisch Gmünd",
     categorySlug: "dienstleister",
     subcategorySlug: "digitalisierungsberatung",
-    updatedAt: "2026-04",
+    updatedAt: "2026-09-15",
     featurePageHref: "/beste-digitalisierungsberatung-schwaebisch-gmuend",
     intro: "Zwischen Strategie, Technik und Umsetzung braucht Digitalisierung oft Partner, die mehrere Ebenen gleichzeitig verstehen. Diese Liste bündelt zehn Adressen in Schwäbisch Gmünd, die dafür besonders anschlussfähig wirken. Transparenzhinweis: GD Listen wird von NESANI betrieben. NESANI ist in dieser Liste selbst vertreten.",
     entries: [
