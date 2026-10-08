@@ -24,7 +24,7 @@ const STATIC_ROUTES: {
   { path: '/', updated: '2026-09-15', changeFrequency: 'weekly', priority: 1.0 },
   { path: '/kategorie', updated: '2026-09-02', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/top10', updated: '2026-09-15', changeFrequency: 'weekly', priority: 0.9 },
-  { path: '/blog', updated: '2026-07-30', changeFrequency: 'weekly', priority: 0.7 },
+  { path: '/blog', updated: '2026-10-08', changeFrequency: 'weekly', priority: 0.7 },
   { path: '/fuer-unternehmen', updated: '2026-07-30', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/beste-social-media-agentur-schwaebisch-gmuend', updated: '2026-09-15', changeFrequency: 'monthly', priority: 0.85 },
   { path: '/beste-werbeagentur-schwaebisch-gmuend', updated: '2026-09-15', changeFrequency: 'monthly', priority: 0.85 },
